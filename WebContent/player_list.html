@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>SPOGG</title>
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+<!-- Custom styles for this template-->
+<link href="css/sb-admin-2.min.css" rel="stylesheet">
+<link href="css/spogg_style.css" rel="stylesheet">
+<script src="vendor/jquery/jquery.min.js"></script>
+</head>
+
+<body id="page-top">
+
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+			<div id="mask"></div>
+			<!-- Main Content -->
+			<div id="content" class="bg_spogg_eee">
+				<!-- Topbar -->
+				<nav
+					class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow spogg_top_nav bg_spogg_color">
+
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav spogg_pc_Menu">
+						<li><a href="index.html">메인</a></li>
+						<li><a href="player_list.html" class="active">선수단</a></li>
+						<li><a href="schedule.html">스케줄</a></li>
+						<li><a href="recode.html">기록</a></li>
+						<li><a href="menu_more.html">더보기</a></li>
+					</ul>
+				</nav>
+				<!-- End of Topbar -->
+
+				<!-- Mobile Topbar -->
+				<nav class="spogg_mobile_Menu">
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav_mobile" id="spogg_mobile_Menu">
+						<li><a href="index.html"><img src="img/spogg/house_icon.png">메인</a></li>
+						<li><a href="player_list.html" class="active"><img src="img/spogg/group_icon_blue.png">선수단</a></li>
+						<li><a href="schedule.html"><img src="img/spogg/calender_icon.png">스케줄</a></li>
+						<li><a href="recode.html"><img src="img/spogg/sound_icon.png">기록</a></li>
+						<li><a href="menu_more.html"><img src="img/spogg/etc_icon.png" style="padding: 9px 0">더보기</a></li>
+					</ul>
+				</nav>
+
+				<!-- Mobile End of Topbar -->
+				<!--<script src="js/mobilemenu.js"></script>-->
+
+
+				<!-- Begin Page Content -->
+				<div class="container-fluid">
+
+					<!-- Sub Page Heading -->
+					<nav class="navbar bg_spogg_color spogg_mobile_Menu_top">
+						<!--back (Topbar) -->
+						<!--<button id="sidebarToggleTop"
+							class="btn btn-link rounded-circle mr-3" onclick="history.back()">
+							<i class="fas fa-arrow-left"></i>
+						</button>-->
+						<div class="subpage_title">선수단</div>
+					</nav>
+					<script type="text/javascript">
+				
+					function search_result() {
+						//alert("!!!!!!!!!!!!!!!");
+						
+						//검색결과 출력
+						$("#playerlist_content").empty();
+						$("#playerlist_content").html("<div class='col-xs-6 p-sm-1 sub_player_list'>"
+								+"			<div class='sub_player_list_img player_type_new'>"
+								+"				<span>신규</span> <img src='http://placehold.it/160x192/cccccc/ffffff'>"
+								+"				<ul>"
+								+"					<li><a href='javascript:modal_open(1);'>수락</a></li>"
+								+"					<li><a href='javascript:modal_open(0);'>거절</a></li>"
+								+"				</ul>"
+								+"			</div>"
+								+"			<div class='sub_player_list_img text-left'>"
+								+"				<div class='spogg_main_player_info_1'>"
+								+"					<span>31</span> 손아섭"
+								+"				</div>"
+								+"				<div class='spogg_main_player_info_2'>"
+								+"					<span>타율</span>0.350"
+								+"				</div>"
+								+"			</div>"
+								+"		</div>"
+								+"		<div class='col-xs-6 p-sm-1 sub_player_list'>"
+								+"			<div class='sub_player_list_img player_type_new'>"
+								+"				<span>신규</span> <img src='http://placehold.it/160x192/cccccc/ffffff'>"
+								+"				<ul>"
+								+"					<li><a href='javascript:modal_open(1);'>수락</a></li>"
+								+"					<li><a href='javascript:modal_open(0);'>거절</a></li>"
+								+"				</ul>"
+								+"			</div>"
+								+"			<div class='sub_player_list_img text-left'>"
+								+"				<div class='spogg_main_player_info_1'>"
+								+"					<span>31</span> 손아섭"
+								+"				</div>"
+								+"				<div class='spogg_main_player_info_2'>"
+								+"					<span>타율</span>0.350"
+								+"				</div>"
+								+"			</div>"
+								+"		</div>");
+					}
+					</script>
+					
+					<div class="card shadow mb-4">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 spogg_recode_search">
+									<form>
+										<input type="text" class="form-control" id="search"
+											placeholder="선수명으로 검색해보세요.">
+										<button type="button" class="btn btn-default" onclick="search_result()">
+											<i class="fas fa-search"></i>
+										</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Content Row -->
+					<div class="row">
+						<!-- Earnings (Monthly) Card Example -->
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							
+
+							<div class="row bg-white">
+								<div class="col-xs-12 p-sm-12 player_tabmenu" style="padding: 0">
+									<ul class="nav-pills text-center" id="player_tabmenu_list">
+										<li role="presentation" class="active"><a href="#">전체</a></li>
+										<li role="presentation"><a href="#">투수</a></li>
+										<li role="presentation"><a href="#">포수</a></li>
+										<li role="presentation"><a href="#">내야</a></li>
+										<li role="presentation"><a href="#">외야</a></li>
+									</ul>
+									<div class="row bg-white mb-12 p-sm-4" id="playerlist_content">
+										<!-- 선수 1명 시작-->
+										<!--
+										<div class="col-xs-6 p-sm-1 sub_player_list">
+											<div class="sub_player_list_img player_type_new">
+												<span>신규</span> <img
+													src="img/landing/양의지.jpg" onclick="location.href='player.html'">
+												<ul>
+													<li><a href="javascript:modal_open(1);">수락</a></li>
+													<li><a href="javascript:modal_open(0);">거절</a></li>
+												</ul>
+											</div>
+											<div class="sub_player_list_img text-left">
+												<div class="spogg_main_player_info_1">
+													<span>25</span> 양의지
+												</div>
+												<div class="spogg_main_player_info_2">
+													<span>타율</span>0.328
+												</div>
+											</div>
+										</div>-->
+										<!-- 선수 1명 끝-->
+										<!-- 선수 1명 시작-->
+										<!--
+										<div class="col-xs-6 p-sm-1 sub_player_list">
+											<div class="sub_player_list_img player_type_new">
+												<span>신규</span> <img
+													src="img/landing/문승원.jpg" onclick="location.href='player.html'">
+												<ul>
+													<li><a href="javascript:modal_open(1);">수락</a></li>
+													<li><a href="javascript:modal_open(0);">거절</a></li>
+												</ul>
+											</div>
+											<div class="sub_player_list_img text-left">
+												<div class="spogg_main_player_info_1">
+													<span>42</span> 문승원
+												</div>
+												<div class="spogg_main_player_info_2">
+													<span>방어율</span>3.65
+												</div>
+											</div>
+										</div>-->
+										<!-- 선수 1명 끝-->
+										<!-- 선수 1명 시작-->
+										<div class="col-xs-6 p-sm-1 sub_player_list">
+											<div class="sub_player_list_img player_type_manager">
+												<span>감독</span> <img
+													src="img/landing/player6.jpg" onclick="location.href='player.html'">
+												<!--<div class="sub_player_list_settingBtn"
+													onclick="modal_open(2);">
+													<img src="http://placehold.it/40x40/cccccc/ffffff">
+												</div>-->
+											</div>
+											<div class="sub_player_list_img text-left">
+												<div class="spogg_main_player_info_1">
+													<span>32</span> 박세웅
+												</div>
+												<div class="spogg_main_player_info_2">
+													<span>방어율</span>4.70
+												</div>
+											</div>
+										</div>
+										<!-- 선수 1명 끝-->
+										<!-- 선수 1명 시작-->
+										<div class="col-xs-6 p-sm-1 sub_player_list">
+											<div class="sub_player_list_img player_type_coach">
+												<span>코치</span> <img
+													src="img/landing/player12.jpg" onclick="location.href='player.html'">
+												<!--<div class="sub_player_list_settingBtn"
+													onclick="modal_open(2);">
+													<img src="http://placehold.it/40x40/cccccc/ffffff">
+												</div>-->
+											</div>
+											<div class="sub_player_list_img text-left">
+												<div class="spogg_main_player_info_1">
+													<span>10</span> 이대호
+												</div>
+												<div class="spogg_main_player_info_2">
+													<span>타율</span>0.292
+												</div>
+											</div>
+										</div>
+										<!-- 선수 1명 끝-->
+										<!-- 선수 1명 시작-->
+										<div class="col-xs-6 p-sm-1 sub_player_list">
+											<div class="sub_player_list_img player_type_floor">
+												<span>총무</span> <img
+													src="img/landing/player8.jpg" onclick="location.href='player.html'">
+												<!--<div class="sub_player_list_settingBtn"
+													onclick="modal_open(2);">
+													<img src="http://placehold.it/40x40/cccccc/ffffff">
+												</div>-->
+											</div>
+											<div class="sub_player_list_img text-left">
+												<div class="spogg_main_player_info_1">
+													<span>21</span> 송승준
+												</div>
+												<div class="spogg_main_player_info_2">
+													<span>방어율</span>6.20
+												</div>
+											</div>
+										</div>
+										<!-- 선수 1명 끝-->
+										<!-- 선수 1명 시작-->
+										<div class="col-xs-6 p-sm-1 sub_player_list">
+											<div class="sub_player_list_img player_type_new">
+												<img src="img/landing/player4.jpg" onclick="location.href='player.html'">
+												<!--<div class="sub_player_list_settingBtn"
+													onclick="modal_open(2);">
+													<img src="http://placehold.it/40x40/cccccc/ffffff">
+												</div>-->
+											</div>
+											<div class="sub_player_list_img text-left">
+												<div class="spogg_main_player_info_1">
+													<span>06</span> 마차도
+												</div>
+												<div class="spogg_main_player_info_2">
+													<span>타율</span>0.280
+												</div>
+											</div>
+										</div>
+										<!-- 선수 1명 끝-->
+										<!-- 선수 1명 시작-->
+										<div class="col-xs-6 p-sm-1 sub_player_list">
+											<div class="sub_player_list_img player_type_new">
+												<img src="img/landing/player10.jpg" onclick="location.href='player.html'">
+												<!--<div class="sub_player_list_settingBtn"
+													onclick="modal_open(2);">
+													<img src="http://placehold.it/40x40/cccccc/ffffff">
+												</div>-->
+											</div>
+											<div class="sub_player_list_img text-left">
+												<div class="spogg_main_player_info_1">
+													<span>13</span> 안치홍
+												</div>
+												<div class="spogg_main_player_info_2">
+													<span>타율</span>0.286
+												</div>
+											</div>
+										</div>
+										<!-- 선수 1명 끝-->
+										<!-- 선수 1명 시작-->
+										<div class="col-xs-6 p-sm-1 sub_player_list">
+											<div class="sub_player_list_img player_type_new">
+												<img src="img/landing/player13.jpg" onclick="location.href='player.html'">
+												<!--<div class="sub_player_list_settingBtn"
+													onclick="modal_open(2);">
+													<img src="http://placehold.it/40x40/cccccc/ffffff">
+												</div>-->
+											</div>
+											<div class="sub_player_list_img text-left">
+												<div class="spogg_main_player_info_1">
+													<span>08</span> 전준우
+												</div>
+												<div class="spogg_main_player_info_2">
+													<span>타율</span>0.297
+												</div>
+											</div>
+										</div>
+										<!-- 선수 1명 끝-->
+										<!-- 선수 1명 시작-->
+										<div class="col-xs-6 p-sm-1 sub_player_list">
+											<div class="sub_player_list_img player_type_new">
+												<img src="img/landing/player7.jpg" onclick="location.href='player.html'">
+												<!--<div class="sub_player_list_settingBtn"
+													onclick="modal_open(2);">
+													<img src="http://placehold.it/40x40/cccccc/ffffff">
+												</div>-->
+											</div>
+											<div class="sub_player_list_img text-left">
+												<div class="spogg_main_player_info_1">
+													<span>31</span> 손아섭
+												</div>
+												<div class="spogg_main_player_info_2">
+													<span>타율</span>0.352
+												</div>
+											</div>
+										</div>
+										<!-- 선수 1명 끝-->
+										<!-- 선수 1명 시작-->
+										<div class="col-xs-6 p-sm-1 sub_player_list">
+											<div class="sub_player_list_img " onclick="location.href='player.html'">
+												<img src="img/landing/player2.jpg">
+												<!--<div class="sub_player_list_settingBtn"
+													onclick="modal_open(3);">
+													<img src="http://placehold.it/40x40/cccccc/ffffff">
+												</div>-->
+											</div>
+											<div class="sub_player_list_img text-left">
+												<div class="spogg_main_player_info_1">
+													<span>41</span> 김대우
+												</div>
+												<div class="spogg_main_player_info_2">
+													<span>방어율</span>3.10
+												</div>
+											</div>
+										</div>
+										<!-- 선수 1명 끝-->
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+						aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-body text-center" id="modal-body">...</div>
+								<div class="modal-footer" id="modal-footer">btn11</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- /.container-fluid -->
+
+				<script type="text/javascript">
+				function modal_open(chk) {
+					/*
+						chk
+						1 : 신규 회원 수락
+						0 : 신규 회원 거절
+						2 : 직위 해제
+						3 : 직위 설정
+					*/
+					
+					var qus = "";
+					var popBtn = "";
+					
+					if(chk==0){
+						qus = "신규 회원 입단을 거절하십니까?";
+						popBtn = '<button type="button" class="btn btn-primary" data-dismiss="modal">네</button>'
+				        +'<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>';
+					}else if(chk==1){
+						qus = "신규 회원 입단을 수락하십니까?";
+						popBtn = '<button type="button" class="btn btn-primary" data-dismiss="modal">네</button>'
+					        +'<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>';
+					}else if(chk==2){
+						qus = "직위 해제 하시겠습니까?";
+						popBtn = '<button type="button" class="btn btn-primary" data-dismiss="modal">네</button>'
+					        +'<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>';
+					}else if(chk==3){
+						qus = "직위 설정 하시겠습니까?";
+						qus += "<ul class='select_player_type'>"
+							+"<li><a href='#'>감독</a></li>"
+							+"<li><a href='#'>코치</a></li>"
+							+"<li><a href='#'>총무</a></li>"
+							+"<li data-dismiss='modal'><a href='#'>창닫기</a></li>"
+						    +"</ul>"; 
+						popBtn = "";
+						    
+					}
+					$('#modal-body').html('<strong >'+qus+'</strong>');
+					$('#modal-footer').html(popBtn);
+					$('#myModal').modal('show');
+				}
+				jQuery(document).ready(function(){		//선수단 tab active하는 함수
+					$( "#player_tabmenu_list li" ).click(function() {
+						var index = $(this).index();		//몇번째 li인지
+						index +=1;	//index는 0부터, nth-child는 1부터
+						
+						/*기존 active 해제 하기*/
+						var check_active = $("#player_tabmenu_list li").hasClass("active");
+						if(check_active){
+							$("#player_tabmenu_list li").removeClass("active");
+						}
+			
+						/*기존 active 해제 하기*/
+						var new_active = "#player_tabmenu_list li:nth-child("+index+")";
+					    $(new_active).addClass("active");
+					    
+					    /*	
+					    	//tab내용 변경
+					    	$("#playerlist_content").html("123123");
+					    */
+					    
+				    });
+			   });
+			  </script>
+			</div>
+			<!-- End of Main Content -->
+		</div>
+		<!-- End of Content Wrapper -->
+	</div>
+	<!-- End of Page Wrapper -->
+
+
+
+	<!-- Bootstrap core JavaScript-->
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<div>
+	<div class="item active">
+		<div class="cal_date">2020년 08월 30일</div>
+		<div class="accordion" id="accordionExample">
+			<div class="card">
+				<div class="card-header" id="headingOne">
+					<h2 class="clearfix mb-0">
+						<a class="btn btn-link collapsed event-yellow" data-toggle="collapse" data-target="#collapseOne3" aria-expanded="false" aria-controls="collapseOne">
+							<span>&nbsp&nbsp&nbsp&nbsp</span>회비제목 <b><i class="fas fa-angle-up"></i></b>
+						</a>									
+					</h2>
+				</div>
+				<div id="collapseOne3" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" style="">
+					<div class="card-body">
+						<table>
+							<tr>
+								<th>시작일</th><td>2020-08-30 12:00</td>
+							</tr>
+							<tr>
+								<th>종료일</th><td>2020-08-30 13:00</td>
+							</tr>
+							<tr>
+								<th>장  소</th><td>경암체육관</td>
+							</tr>
+							<tr>
+								<th>내  용</th><td>우천시 경기가 취소 될 수 있습니다.<br>전일공지하겠습니다.</td>
+							</tr>
+						</table>
+						<div class="text-center payment_people">
+							납부인원 3명
+						</div>
+						<div class="payment_btn2 text-center">
+							<button class="payment_btn2_gray">수정</button>
+							<button class="payment_btn2_red">삭제</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" id="headingTwo">
+					<h2 class="mb-0">
+						<a class="btn btn-link collapsed event-orange" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<span>&nbsp&nbsp&nbsp&nbsp</span>비리그경기제목<b><i class="fas fa-angle-up"></i></b>
+						</a>
+					</h2>
+				</div>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample" style="">
+					<div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				 $('#myCarousel').carousel('pause');
+				$(".carousel-inner").swiperight(function() {
+					$(this).parent().carousel('prev');
+				});
+				$(".carousel-inner").swipeleft(function() {
+					$(this).parent().carousel('next');
+				});
+				
+				
+				// Add minus icon for collapse element which is open by default
+				$(".collapse.show").each(function(){
+					$(this).siblings(".card-header").find(".btn b").html("<i class='fas fa-angle-down'></i>");
+					$(this).prev(".card-header").addClass("highlight");
+				});
+				
+				// Toggle plus minus icon on show hide of collapse element
+				$(".collapse").on('show.bs.collapse', function(){
+					$(this).parent().find(".card-header .btn b").html("<i class='fas fa-angle-down'></i>");
+				}).on('hide.bs.collapse', function(){
+					$(this).parent().find(".card-header .btn b").html("<i class='fas fa-angle-up'></i>");
+				});
+				
+				// Highlight open collapsed element 
+				$(".card-header .btn").click(function(){
+					$(".card-header").not($(this).parents()).removeClass("highlight");
+					$(this).parents(".card-header").toggleClass("highlight");
+				});
+			});
+		</script>
+	</div>

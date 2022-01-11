@@ -1,0 +1,950 @@
+<link rel="stylesheet" type="text/css" href="css/slick.css">
+<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+<style type="text/css">
+.slider {
+	width: 100%;
+	margin: 0px auto;
+	box-sizing: border-box;
+}
+
+.slick-slide {
+	margin: 0px 10px;
+}
+
+.slick-slide img {
+	width: 100%;
+}
+
+.slick-prev:before, .slick-next:before {
+	color: black;
+}
+
+.slick-slide {
+	transition: all ease-in-out .3s;
+	opacity: .2;
+}
+
+.slick-active {
+	opacity: 1;
+}
+
+.slick-current {
+	opacity: 1;
+}
+</style>
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>SPOGG</title>
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+<!-- Custom styles for this template-->
+<link href="css/sb-admin-2.min.css" rel="stylesheet">
+<link href="css/spogg_style.css" rel="stylesheet">
+<script src="vendor/jquery/jquery.min.js"></script>
+</head>
+
+<body id="page-top">
+
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+			<div id="mask"></div>
+			<!-- Main Content -->
+			<div id="content" class="bg_spogg_eee">
+
+				<!-- Topbar -->
+				<nav
+					class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow spogg_top_nav bg_spogg_color">
+
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav spogg_pc_Menu">
+						<li><a href="index.html" class="active">메인</a></li>
+						<li><a href="player_list.html">선수단</a></li>
+						<li><a href="schedule.html">스케줄</a></li>
+						<li><a href="recode.html">기록</a></li>
+						<li><a href="menu_more.html">더보기</a></li>
+					</ul>
+				</nav>
+				<!-- End of Topbar -->
+
+				<!-- Mobile Topbar -->
+				<nav class="spogg_mobile_Menu">
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav_mobile" id="spogg_mobile_Menu">
+						<ul class="nav nav-pills nav-justified spogg_nav_mobile" id="spogg_mobile_Menu">
+							<li><a href="index.html"><img src="img/spogg/house_icon.png">메인</a></li>
+							<li><a href="player_list.html"><img src="img/spogg/group_icon.png">선수단</a></li>
+							<li><a href="schedule.html"><img src="img/spogg/calender_icon.png">스케줄</a></li>
+							<li><a href="recode.html" class="active"><img src="img/spogg/sound_icon_blue.png">기록</a></li>
+							<li><a href="menu_more.html"><img src="img/spogg/etc_icon.png" style="padding: 9px 0">더보기</a></li>
+						</ul>
+					</ul>
+				</nav>
+
+				<!-- Mobile End of Topbar -->
+				<!--<script src="js/mobilemenu.js"></script>-->
+				<!-- Page level plugins -->
+				<script src="vendor/chart.js/Chart.min.js"></script>
+				<script type="text/javascript">
+				
+				function search_result() {
+					//alert("!!!!!!!!!!!!!!!");
+					
+					
+					
+					//검색결과 출력
+					$("#search_result").empty();
+					$("#search_result").html("<div class='row mb-4 '>"
+							+"		<div class='col-xs-12 col-sm-6 col-md-6 '>"
+							+"			<div class='bg-white shadow mb-12 spogg_leaguepage' onclick='location.href='league_detail.html''>"
+							+"				<div class='league_logo text-center'>"
+							+"					<img src='http://placehold.it/100x100?text=Logo'>"
+							+"					<h6>리그명</h6>"
+							+"				</div>"
+							+"				<div class='league_graph2'>"
+							+"					<canvas id='canvas1'></canvas>"
+							+"				</div>"
+							+"			</div>"
+							+"		</div>"
+							+"	</div>	"
+							+"	<div class='row mb-4 '>	"
+							+"		<div class='col-xs-12 col-sm-6 col-md-6'>"
+							+"			<div class='bg-white shadow mb-12 spogg_leaguepage' onclick='location.href='league_detail.html''>"
+							+"				<div class='league_logo text-center'>"
+							+"					<img src='http://placehold.it/100x100?text=Logo'>"
+							+"					<h6>리그명</h6>"
+							+"				</div>"
+							+"				<div class='league_graph2'>"
+							+"					<canvas id='canvas2'></canvas>"
+							+"				</div>"
+							+"			</div>"
+							+"		</div>"
+							+"	</div>");
+					
+					var config1 = {
+							type : 'line',
+							data : {
+								labels : [ '97', '92', '87', '77' ],
+								datasets : [ {
+									label : false,
+									backgroundColor : 'rgba(80, 147, 255, 1)',
+									borderColor : 'rgba(80, 147, 255, 1)',
+									data : [ 5, 6, 1, 3],
+									fill : false,
+								} ]
+							},
+					
+							options : {
+								responsive : true,
+								title : {
+									display : false,
+									text : 'Chart.js Line Chart'
+								},
+								legend : {
+									display : false
+								},
+								tooltips : {
+									mode : 'index',
+									intersect : false,
+								},
+								hover : {
+									mode : 'nearest',
+									intersect : true
+								},
+								scales : {
+									xAxes : [ {
+										display : true,
+										scaleLabel : {
+											display : false,
+											labelString : 'Month'
+										}
+									} ],
+									yAxes : [ {
+										display : true,
+										scaleLabel : {
+											display : false,
+											labelString : 'Value'
+										}
+									} ]
+								}
+							}
+						};
+						
+						var config2 = {
+								type : 'line',
+								data : {
+									labels : [ '88', '42', '67', '97' ],
+									datasets : [ {
+										label : false,
+										backgroundColor : 'rgba(80, 147, 255, 1)',
+										borderColor : 'rgba(80, 147, 255, 1)',
+										data : [ 9, 4, 6, 6],
+										fill : false,
+									} ]
+								},
+					
+								options : {
+									responsive : true,
+									title : {
+										display : false,
+										text : 'Chart.js Line Chart'
+									},
+									legend : {
+										display : false
+									},
+									tooltips : {
+										mode : 'index',
+										intersect : false,
+									},
+									hover : {
+										mode : 'nearest',
+										intersect : true
+									},
+									scales : {
+										xAxes : [ {
+											display : true,
+											scaleLabel : {
+												display : false,
+												labelString : 'Month'
+											}
+										} ],
+										yAxes : [ {
+											display : true,
+											scaleLabel : {
+												display : false,
+												labelString : 'Value'
+											}
+										} ]
+									}
+								}
+							};
+		
+						var ctx = document.getElementById('canvas1').getContext('2d');
+						window.myLine = new Chart(ctx, config1);
+						
+						var ctx2 = document.getElementById('canvas2').getContext('2d');
+						window.myLine = new Chart(ctx2, config2);
+				}
+				</script>
+				<!-- Begin Page Content -->
+				<div class="container-fluid">
+					<!-- Sub Page Heading -->
+					<nav class="navbar bg_spogg_color spogg_mobile_Menu_top">
+						<!--back (Topbar) -->
+						<!--<button id="sidebarToggleTop"
+							class="btn btn-link rounded-circle mr-3" onclick="history.back()">
+							<i class="fas fa-arrow-left"></i>
+						</button>-->
+						<div class="subpage_title">기록실</div>
+					</nav>
+					<!-- Page Heading -->
+					<div class="card shadow mb-4">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 spogg_recode_search">
+									<form>
+										<input type="text" class="form-control" id="search"
+											placeholder="리그명으로 검색해보세요.">
+										<button type="button" class="btn btn-default" onclick="search_result()">
+											<i class="fas fa-search"></i>
+										</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Content Row -->
+					<div id="search_result">
+						<div class="row">
+							<!-- Earnings (Monthly) Card Example -->
+							<div class="col-xs-12 col-sm-12 col-md-12 ">
+								<div class="bg-white shadow recode_icon">
+									<!-- PC용  -->
+									<section class="regular slider" id="pc_slider"
+										style="display: none;">
+										<div>
+											<img src="img/spogg/recode/Artboard_1.png" onclick="location.href='pitcher.html'">
+										</div>
+										<div>
+											<img src="img/spogg/recode/Artboard_2.png" onclick="location.href='pitcher.html'">
+										</div>
+										<div>
+											<img src="img/spogg/recode/Artboard_3.png" onclick="location.href='pitcher.html'">
+										</div>
+										<div>
+											<img src="img/spogg/recode/Artboard_4.png" onclick="location.href='pitcher.html'">
+										</div>
+										<div>
+											<img src="img/spogg/recode/Artboard_5.png" onclick="location.href='pitcher.html'">
+										</div>
+										<div>
+											<img src="img/spogg/recode/Artboard_6.png" onclick="location.href='pitcher.html'">
+										</div>
+										<div>
+											<img src="img/spogg/recode/Artboard_7.png" onclick="location.href='pitcher.html'">
+										</div>
+										<div>
+											<img src="img/spogg/recode/Artboard_8.png" onclick="location.href='pitcher.html'">
+										</div>
+									</section>
+									<!-- PC용  -->
+	
+									<!-- MOBILE용  -->
+									<section class="regular slider" id="mobile_slider" >
+										<div>
+											<img src="img/spogg/recode/Artboard_1.png" onclick="location.href='pitcher.html'"> 
+											<img src="img/spogg/recode/Artboard_2.png" onclick="location.href='pitcher.html'">
+										</div>
+										<div>
+											<img src="img/spogg/recode/Artboard_3.png" onclick="location.href='pitcher.html'"> 
+											<img src="img/spogg/recode/Artboard_4.png" onclick="location.href='pitcher.html'">
+										</div>
+										<div>
+											<img src="img/spogg/recode/Artboard_5.png" onclick="location.href='pitcher.html'"> 
+											<img src="img/spogg/recode/Artboard_6.png" onclick="location.href='pitcher.html'">
+										</div>
+										<div>
+											<img src="img/spogg/recode/Artboard_7.png" onclick="location.href='pitcher.html'"> 
+											<img src="img/spogg/recode/Artboard_8.png" onclick="location.href='pitcher.html'">
+										</div>
+										<!--<div>
+											<img src="http://placehold.it/90x90?text=7" onclick="location.href='pitcher.html'"> 
+											<img src="http://placehold.it/90x90?text=8" onclick="location.href='pitcher.html'">
+										</div>-->
+									</section>
+									<!-- MOBILE용  -->
+								</div>
+							</div>
+						</div>
+	
+						<!-- Content Row -->
+	
+						<div class="row mb-4 bg-white shadow mb-12 recode_cate"
+							style="margin-top: 20px;">
+							<!-- 카테고리 -->
+							<div class="col-xs-6 col-sm-3 col-md-3 recode_cate_btn">
+								<img src="img/spogg/Group 349.jpg" onclick="location.href='video.html'">
+								<span>Video</span>
+							</div>
+							<div class="col-xs-6 col-sm-3 col-md-3 recode_cate_btn">
+								<img src="img/spogg/Group 348.jpg" onclick="location.href='photo.html'">
+								<span>Photo</span>
+							</div>
+							<div class="col-xs-6 col-sm-3 col-md-3 recode_cate_btn">
+								<img src="img/spogg/Group 350.jpg" onclick="location.href='mvp.html'">
+								<span>MVP</span>
+							</div>
+							<div class="col-xs-6 col-sm-3 col-md-3 recode_cate_btn">
+								<img src="img/spogg/Group 351.jpg" onclick="location.href='league.html'">
+								<span>League</span>
+							</div>
+						</div>
+	
+						<div class="row mb-4 ">
+							<!-- 기록요약 -->
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<div class="bg-white shadow mb-12 spogg_recode_sum">
+									<!-- Card Header -->
+									<div
+										class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+										<h6 class="m-0 font-weight-bold">기록요약</h6>
+									</div>
+									<!-- Notice Body -->
+									<div class=" mobile_scroll">
+										<table class="table table-striped text-center">
+											<tr>
+												<td>RECORD</td>
+												<td>AVG</td>
+												<td>G</td>
+												<td>AB</td>
+												<td>H</td>
+												<td>HR</td>
+												<td>RBI</td>
+												<td>SB</td>
+												<td>OBP</td>
+												<td>SLG</td>
+												<td>OPS</td>
+												<!--<td>RECORD</td>
+												<td>A</td>
+												<td>AB</td>
+												<td>H</td>
+												<td>RECORD</td>
+												<td>A</td>
+												<td>AB</td>
+												<td>H</td>
+												<td>RECORD</td>
+												<td>A</td>
+												<td>AB</td>
+												<td>H</td>-->
+											</tr>
+											<tr>
+												<td>10</td>
+												<td>0.313</td>
+												<td>52</td>
+												<td>195</td>
+												<td>61</td>
+												<td>15</td>
+												<td>384</td>
+												<td>103</td>
+												<td>0.391</td>
+												<td>0.423</td>
+												<td>0.814</td>
+												<!--<td>10</td>
+												<td>0.502</td>
+												<td>73(9)</td>
+												<td>243</td>
+												<td>122</td>
+												<td>3</td>
+												<td>10</td>
+												<td>0.502</td>
+												<td>73(9)</td>
+												<td>243</td>
+												<td>122</td>
+												<td>3</td>-->
+											</tr>
+											<!--<tr>
+												<td>RECORD</td>
+												<td>AVG</td>
+												<td>G</td>
+												<td>AB</td>
+												<td>H</td>
+												<td>GR</td>
+												<td>RECORD</td>
+												<td>A</td>
+												<td>AB</td>
+												<td>H</td>
+												<td>RECORD</td>
+												<td>A</td>
+												<td>AB</td>
+												<td>H</td>
+												<td>RECORD</td>
+												<td>A</td>
+												<td>AB</td>
+												<td>H</td>
+											</tr>
+											<tr>
+												<td>10</td>
+												<td>0.502</td>
+												<td>73(9)</td>
+												<td>243</td>
+												<td>122</td>
+												<td>3</td>
+												<td>10</td>
+												<td>0.502</td>
+												<td>73(9)</td>
+												<td>243</td>
+												<td>122</td>
+												<td>3</td>
+												<td>10</td>
+												<td>0.502</td>
+												<td>73(9)</td>
+												<td>243</td>
+												<td>122</td>
+												<td>3</td>
+											</tr>-->
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+	
+						<div class="row mb-4">
+							<!-- 그래프1 -->
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<div class="bg-white shadow mb-12">
+									<!-- Card Header -->
+									<div
+										class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+										<h6 class="m-0 font-weight-bold">최근경기</h6>
+										<div class="dropdown no-arrow">
+											<a class="dropdown-toggle" href="#" role="button"
+												id="dropdownMenuLink" data-toggle="dropdown"
+												aria-haspopup="true" aria-expanded="false"> 더보기<i class="fas fa-chevron-right"></i>
+											</a>
+										</div>
+									</div>
+									<!-- Notice Body -->
+									<div class="spogg_main_teamplay mobile_scroll">
+										<table>
+											<tr>
+												<td>
+													<div class="spogg_main_teamplay_content text-center">
+														<div class="spogg_main_teamplay_away mb-2">
+															<div class="spogg_main_teamplay_icon">
+																<img src="img/landing/team3.png" style="border:0px">
+															</div>
+															<div class="spogg_main_teamplay_name">롯데 자이언츠</div>
+															<div class="spogg_main_teamplay_result play_lose">패</div>
+														</div>
+														<div class="spogg_main_teamplay_score" style="padding: 0px">
+															<h4>1:2</h4>
+															<span>종료</span>
+														</div>
+														<div class="spogg_main_teamplay_home">
+															<div class="spogg_main_teamplay_icon">
+																<img src="img/landing/team6.png" style="border:0px">
+															</div>
+															<div class="spogg_main_teamplay_name">NC 다이노스</div>
+															<div class="spogg_main_teamplay_result play_win">승</div>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="spogg_main_teamplay_content text-center">
+														<div class="spogg_main_teamplay_away mb-2">
+															<div class="spogg_main_teamplay_icon">
+																<img src="img/landing/team1.png" style="border:0px">
+															</div>
+															<div class="spogg_main_teamplay_name">KIA 타이거스</div>
+															<div class="spogg_main_teamplay_result play_lose">패</div>
+														</div>
+														<div class="spogg_main_teamplay_score" style="padding: 0px">
+															<h4>2:4</h4>
+															<span>종료</span>
+														</div>
+														<div class="spogg_main_teamplay_home">
+															<div class="spogg_main_teamplay_icon">
+																<img src="img/landing/team3.png" style="border:0px">
+															</div>
+															<div class="spogg_main_teamplay_name">롯데 자이언츠</div>
+															<div class="spogg_main_teamplay_result play_win">승</div>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="spogg_main_teamplay_content text-center">
+														<div class="spogg_main_teamplay_away mb-2">
+															<div class="spogg_main_teamplay_icon">
+																<img src="img/landing/team3.png" style="border:0px">
+															</div>
+															<div class="spogg_main_teamplay_name">롯데 자이언츠</div>
+															<div class="spogg_main_teamplay_result play_lose">승</div>
+														</div>
+														<div class="spogg_main_teamplay_score" style="padding: 0px">
+															<h4>10:2</h4>
+															<span>종료</span>
+														</div>
+														<div class="spogg_main_teamplay_home">
+															<div class="spogg_main_teamplay_icon">
+																<img src="img/landing/team8.png" style="border:0px">
+															</div>
+															<div class="spogg_main_teamplay_name">KT 위즈</div>
+															<div class="spogg_main_teamplay_result play_win">패</div>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="spogg_main_teamplay_content text-center">
+														<div class="spogg_main_teamplay_away mb-2">
+															<div class="spogg_main_teamplay_icon">
+																<img src="img/landing/team5.png" style="border:0px">
+															</div>
+															<div class="spogg_main_teamplay_name">SK 와이번스</div>
+															<div class="spogg_main_teamplay_result play_lose">패</div>
+														</div>
+														<div class="spogg_main_teamplay_score" style="padding: 0px">
+															<h4>3:5</h4>
+															<span>종료</span>
+														</div>
+														<div class="spogg_main_teamplay_home">
+															<div class="spogg_main_teamplay_icon">
+																<img src="img/landing/team3.png" style="border:0px">
+															</div>
+															<div class="spogg_main_teamplay_name">롯데 자이언츠</div>
+															<div class="spogg_main_teamplay_result play_win">승</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+	
+						<div class="row mb-4">
+							<!-- 그래프3 -->
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<div class="bg-white shadow mb-12">
+									<!-- Card Header -->
+									<div
+										class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+										<h6 class="m-0 font-weight-bold">그래프3</h6>
+									</div>
+									<!--Row Body -->
+	
+									<!-- 
+					                	클래스명 : 구분 + 레벨 
+					                	ex) 파워sss = power_sss
+					                	        파워f = power_f
+					                	
+					                	(구분)
+					                	파워 : power_
+					                	정확성 : accuracy_
+					                	선구안 : battingEye_
+					                	주루 : baserunning_
+					                	스타성 : star_ 
+					                	
+					                	(레벨)
+					                	sss / ss / s / ap(A+) / a / bp(B+) / b / c / d / f
+					                 -->
+									<div class="mobile_scroll">
+										<table class="league_table">
+											<thead>
+												<tr>
+													<th class="red_text">파워</th>
+													<th class="purple_text">정확성</th>
+													<th class="grren_text">선구안</th>
+													<th class="yellow_text">주루</th>
+													<th class="blue_text">스타성</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><div class="power_sss">
+															2루타<br>
+															<span>SSS</span>
+														</div></td>
+													<td><div class="accuracy_bp">
+															안타<br>
+															<span>B+</span>
+														</div></td>
+													<td><div class="battingEye_f">
+															볼넷<br>
+															<span>F</span>
+														</div></td>
+													<td><div class="baserunning_f">
+															도루<br>
+															<span>F</span>
+														</div></td>
+													<td><div class="star_f">
+															경기<br>
+															<span>F</span>
+														</div></td>
+												</tr>
+												<tr>
+													<td><div class="power_s">
+															장타<br>
+															<span>S</span>
+														</div></td>
+													<td><div class="accuracy_d">
+															타율<br>
+															<span>D</span>
+														</div></td>
+													<td><div class="battingEye_sss">
+															삼진<br>
+															<span>SSS</span>
+														</div></td>
+													<td><div class="baserunning_d">
+															3루타<br>
+															<span>D</span>
+														</div></td>
+													<td><div class="star_d">
+															타점<br>
+															<span>D</span>
+														</div></td>
+												</tr>
+												<tr>
+													<td><div class="power_c">
+															장타율<br>
+															<span>C</span>
+														</div></td>
+													<td><div class="accuracy_c">
+															장타율<br>
+															<span>C</span>
+														</div></td>
+													<td><div class="battingEye_a">
+															볼넷/삼진<br>
+															<span>A</span>
+														</div></td>
+													<td><div class="baserunning_c">
+															특점<br>
+															<span>C</span>
+														</div></td>
+													<td><div class="star_c">
+															홈런<br>
+															<span>C</span>
+														</div></td>
+												</tr>
+												<tr>
+													<td><div class="power_b">
+															순장타율<br>
+															<span>B</span>
+														</div></td>
+													<td><div class="accuracy_b">
+															컨택성공률<br>
+															<span>B</span>
+														</div></td>
+													<td><div class="battingEye_b">
+															삼진율<br>
+															<span>B</span>
+														</div></td>
+													<td><div class="baserunning_b">
+															출루율<br>
+															<span>B</span>
+														</div></td>
+													<td><div class="star_b">
+															OPS<br>
+															<span>B</span>
+														</div></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+	
+	
+						<div class="row mb-4">
+							<!-- 현재 리그 요약 -->
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<div class="bg-white shadow mb-12">
+									<!-- Card Header -->
+									<div
+										class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+										<h6 class="m-0 font-weight-bold">현재 리그 요약</h6>
+									</div>
+									<!-- Notice Body -->
+									<div class="now_league_sum mobile_scroll">
+										<table class="table table-striped text-center" style="font-size: 80%">
+											<tr>
+												<td>리그명</td>
+												<td>RECORD</td>
+												<td>AVG</td>
+												<td>G</td>
+												<td>AB</td>
+												<td>H</td>
+												<td>HR</td>
+												<td>RBI</td>
+												<td>SB</td>
+												<td>OBP</td>
+												<td>SLG</td>
+												<td>OPS</td>
+											</tr>
+											<tr>
+												<th>KB 리그</th>
+												<td>4</td>
+												<td>0.488</td>
+												<td>12</td>
+												<td>41</td>
+												<td>20</td>
+												<td>5</td>
+												<td>91</td>
+												<td>25</td>
+												<td>0.551</td>
+												<td>0.625</td>
+												<td>1.176</td>
+											</tr>
+											<tr>
+												<th>TO 리그</th>
+												<td>3</td>
+												<td>0.231</td>
+												<td>25</td>
+												<td>108</td>
+												<td>25</td>
+												<td>6</td>
+												<td>194</td>
+												<td>48</td>
+												<td>0.295</td>
+												<td>0.456</td>
+												<td>0.751</td>
+											</tr>
+											<tr>
+												<th>WA 리그</th>
+												<td>3</td>
+												<td>0.348</td>
+												<td>15</td>
+												<td>46</td>
+												<td>16</td>
+												<td>4</td>
+												<td>99</td>
+												<td>30</td>
+												<td>0.395</td>
+												<td>0.511</td>
+												<td>0.906</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+	
+						<div class="row mb-4">
+							<!-- 최근 사진 -->
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<div class="bg-white shadow mb-12">
+									<!-- Card Header -->
+									<div
+										class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+										<h6 class="m-0 font-weight-bold">최근 사진</h6>
+										<div class="dropdown no-arrow">
+											<a href="photo.html"> 더보기<i class="fas fa-chevron-right"></i></a>
+										</div>
+									</div>
+									<!-- Notice Body -->
+									<div class="spogg_main_photo">
+										<table>
+											<tr>
+												<td>
+													<div class="spogg_main_photo_content text-left">
+														<div class="spogg_main_photo_thum">
+															<img src="img/landing/news3.jpg">
+														</div>
+														<div class="spogg_main_photo_thum_info text-left">
+															<div class="spogg_main_photo_title">롯데 자인언츠 댄 스트레일리, 오클랜드 애슬레틱스 레이더망에 '포착'</div>
+															<div class="spogg_main_photo_date">20/11/22</div>
+															<div class="spogg_main_photo_text">롯데 자이언츠의 댄 스트레일리(31)가 메이저리그 오클랜드 애슬레틱스 레이더망에 걸렸다.</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="spogg_main_photo_content text-left">
+														<div class="spogg_main_photo_thum">
+															<img src="img/landing/news2.jpg">
+														</div>
+														<div class="spogg_main_photo_thum_info text-left">
+															<div class="spogg_main_photo_title">롯데, 드라마같던 스토브리그→정규시즌 7위→스토브리그 2막 시작</div>
+															<div class="spogg_main_photo_date">20/11/02</div>
+															<div class="spogg_main_photo_text">지난해 12월 중순부터 방영된 드라마 ‘스토브리그’는 야구팬의 목마름을 해결해줬다</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="spogg_main_photo_content text-left">
+														<div class="spogg_main_photo_thum">
+															<img src="img/landing/news1.jpg">
+														</div>
+														<div class="spogg_main_photo_thum_info text-left">
+															<div class="spogg_main_photo_title">“친구야, 롯데 우승하는 날 꿈꿔보자”…손성빈-김진욱 ‘2002년생 거인’들의 수다</div>
+															<div class="spogg_main_photo_date">20/10/26</div>
+															<div class="spogg_main_photo_text">최근 ‘90년생이 온다’라는 제목의 책 한 권이 적지 않은 반향을 일으켰다</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<!--<tr>
+												<td>
+													<div class="spogg_main_photo_content text-left" onclick="location.href='photo_detail.html'">
+														<div class="spogg_main_photo_thum">
+															<img src="http://placehold.it/375x140/cccccc/ffffff">
+														</div>
+														<div class="spogg_main_photo_thum_info text-left">
+															<div class="spogg_main_photo_title">1자책점도 불만...류현진
+																ERA 논란, 더 떨어질 가능성 있다.</div>
+															<div class="spogg_main_photo_date">20/08/31</div>
+															<div class="spogg_main_photo_text">류현진(33·토론토)의 자책점을
+																놓고 류현진(33·토론토)의 자책점을 놓고</div>
+														</div>
+													</div>
+												</td>
+											</tr>-->
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- /.container-fluid -->
+
+			</div>
+			<!-- End of Main Content -->
+
+		</div>
+		<!-- End of Content Wrapper -->
+
+	</div>
+	<!-- End of Page Wrapper -->
+
+	<!-- Bootstrap core JavaScript-->
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+	<script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+	<script type="text/javascript">
+	  var filter = "win16|win32|win64|mac";
+	  var device_flag = "";
+	  if(navigator.platform){
+	      if( filter.indexOf(navigator.platform.toLowerCase())<0 ){
+	//          alert("모바일 기기에서 접속");
+	    	  jQuery("#pc_slider").attr("style","display:none;");
+	    	  jQuery("#mobile_slider").attr("style","display:inline;");
+	      }else{
+	//          alert("PC에서 접속");
+			  jQuery("#mobile_slider").attr("style","display:none;");
+	    	  jQuery("#pc_slider").attr("style","display:inline;");
+	      }
+	  }
+	
+	    jQuery.noConflict();
+	    jQuery(document).on('ready', function() {
+	    	
+	    	jQuery(".regular").slick({
+	        dots: true,
+	        infinite: true,
+	        arrows: false,
+	        prevArrow: '<button class="slick-prev" aria-label="Previous" type="button">Previous</button>',
+	        nextArrow: '<button class="slick-next" aria-label="Next" type="button">Next</button>',
+	        slidesToShow: 10,
+	        slidesToScroll: 1,
+	        responsive: [
+	            {
+	                breakpoint: 1024,
+	                settings: {
+	                  slidesToShow: 5,
+	                  slidesToScroll: 5,
+	                  infinite: true,
+	                  dots: true
+	                }
+	              },
+	              {
+	                breakpoint: 600,
+	                settings: {
+	                  slidesToShow: 4,
+	                  slidesToScroll: 4,
+	                  infinite: true,
+	                  dots: true
+	                }
+	              },
+	              {
+	                breakpoint: 480,
+	                settings: {
+	                  slidesToShow: 4,
+	                  slidesToScroll: 4,
+	                  infinite: true,
+	                  dots: true
+	                }
+	              }
+	              // You can unslick at a given breakpoint now by adding:
+	              // settings: "unslick"
+	              // instead of a settings object
+	            ]
+	      });
+	    });
+	  </script>
+	
+	
+</body>
+
+</html>
+

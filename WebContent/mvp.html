@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet"
+	href="css/datetimepicker/jquery.simple-dtpicker.css">
+<title>SPOGG</title>
+
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+
+<!-- Custom styles for this template-->
+<link href="css/sb-admin-2.min.css" rel="stylesheet">
+<link href="css/spogg_style.css" rel="stylesheet">
+<script src="vendor/jquery/jquery.min.js"></script>
+</head>
+
+<body id="page-top">
+
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+			<div id="mask"></div>
+			<!-- Main Content -->
+			<div id="content" class="bg_spogg_eee">
+				<!-- Topbar -->
+				<nav
+					class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow spogg_top_nav bg_spogg_color">
+
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav spogg_pc_Menu">
+						<li><a href="index.html" class="active">메인</a></li>
+						<li><a href="player_list.html">선수단</a></li>
+						<li><a href="schedule.html">스케줄</a></li>
+						<li><a href="recode.html">기록</a></li>
+						<li><a href="menu_more.html">더보기</a></li>
+					</ul>
+				</nav>
+				<!-- End of Topbar -->
+
+				<!-- Mobile Topbar -->
+				<nav class="spogg_mobile_Menu">
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav_mobile" id="spogg_mobile_Menu">
+						<li><a href="index.html"><img src="img/spogg/house_icon.png">메인</a></li>
+						<li><a href="player_list.html"><img src="img/spogg/group_icon.png">선수단</a></li>
+						<li><a href="schedule.html"><img src="img/spogg/calender_icon.png">스케줄</a></li>
+						<li><a href="recode.html" class="active"><img src="img/spogg/sound_icon_blue.png">기록</a></li>
+						<li><a href="menu_more.html"><img src="img/spogg/etc_icon.png" style="padding: 9px 0">더보기</a></li>
+					</ul>
+				</nav>
+
+				<!-- Mobile End of Topbar -->
+				<!--<script src="js/mobilemenu.js"></script>-->
+
+				<!-- Begin Page Content -->
+				<div class="container-fluid ">
+
+					<!-- Sub Page Heading -->
+					<nav class="navbar bg_spogg_color spogg_mobile_Menu_top">
+						<!--back (Topbar) -->
+						<button id="sidebarToggleTop"
+							class="btn btn-link rounded-circle mr-3" onclick="history.back()">
+							<i class="fas fa-arrow-left"></i>
+						</button>
+						<div class="subpage_title">MVP</div>
+					</nav>
+					<div class="spogg_mvp bg-white">
+						<div
+							class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+							<h6 class="m-0 font-weight-bold">우리팀 우수 선수</h6>
+						</div>
+					</div>
+					<div class="spogg_mvp_player mobile_scroll bg-white mb-4">
+						<table>
+							<tr>
+								<td style="min-width: 150px;">
+									<div class="spogg_main_player_content text-center" onclick="location.href='player.html'">
+										<div class="spogg_main_player_profile mb-2">
+											<span class="text-left"><img src="img/landing/great1.png" style="width:30%"></span>
+											<img src="img/landing/player7.jpg" class="player_img" style="width:100%">
+										</div>
+										<div class="spogg_main_player_info text-left">
+											<div class="spogg_main_player_info_1">
+												<span>31</span> 손아섭
+											</div>
+											<div class="spogg_main_player_info_2">
+												<span>타율</span>0.352
+											</div>
+										</div>
+									</div>
+								</td>
+								<td style="min-width: 150px;">
+									<div class="spogg_main_player_content text-center" onclick="location.href='player.html'">
+										<div class="spogg_main_player_profile mb-2">
+											<span class="text-left"><img src="img/landing/great2.png" style="width:30%"></span>
+											<img src="img/landing/player9.jpg" class="player_img" style="width:100%">
+										</div>
+										<div class="spogg_main_player_info text-left">
+											<div class="spogg_main_player_info_1">
+												<span>58</span> 스트레일리
+											</div>
+											<div class="spogg_main_player_info_2">
+												<span>방어율</span>2.50
+											</div>
+										</div>
+									</div>
+								</td>
+								<td style="min-width: 150px;">
+									<div class="spogg_main_player_content text-center" onclick="location.href='player.html'">
+										<div class="spogg_main_player_profile mb-2">
+											<span class="text-left"><img src="img/landing/great3.png" style="width:30%"></span>
+											<img src="img/landing/player12.jpg" class="player_img" style="width:100%">
+										</div>
+										<div class="spogg_main_player_info text-left">
+											<div class="spogg_main_player_info_1">
+												<span>10</span> 이대호
+											</div>
+											<div class="spogg_main_player_info_2">
+												<span>타점</span>110
+											</div>
+										</div>
+									</div>
+								</td>
+								<td style="min-width: 150px;">
+									<div class="spogg_main_player_content text-center" onclick="location.href='player.html'">
+										<div class="spogg_main_player_profile mb-2">
+											<span class="text-left"><img src="img/landing/great5.png" style="width:30%"></span>
+											<img src="img/landing/player13.jpg" class="player_img" style="width:100%">
+										</div>
+										<div class="spogg_main_player_info text-left">
+											<div class="spogg_main_player_info_1">
+												<span>08</span> 전준우
+											</div>
+											<div class="spogg_main_player_info_2">
+												<span>홈런</span>26
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td style="min-width: 150px;">
+									<div class="spogg_main_player_content text-center" onclick="location.href='player.html'">
+										<div class="spogg_main_player_profile mb-2">
+											<span class="text-left"><img src="img/landing/great5.png" style="width:30%"></span>
+											<img src="img/landing/player4.jpg" class="player_img" style="width:100%">
+										</div>
+										<div class="spogg_main_player_info text-left">
+											<div class="spogg_main_player_info_1">
+												<span>06</span> 마차도
+											</div>
+											<div class="spogg_main_player_info_2">
+												<span>득점</span>79
+											</div>
+										</div>
+									</div>
+								</td>
+								<td style="min-width: 150px;">
+									<div class="spogg_main_player_content text-center" onclick="location.href='player.html'">
+										<div class="spogg_main_player_profile mb-2">
+											<span class="text-left"><img src="img/landing/great4.png" style="width:30%"></span>
+											<img src="img/landing/player6.jpg" class="player_img" style="width:100%">
+										</div>
+										<div class="spogg_main_player_info text-left">
+											<div class="spogg_main_player_info_1">
+												<span>32</span> 박세웅
+											</div>
+											<div class="spogg_main_player_info_2">
+												<span>승</span>8
+											</div>
+										</div>
+									</div>
+								</td>
+								<td style="min-width: 150px;">
+									<div class="spogg_main_player_content text-center" onclick="location.href='player.html'">
+										<div class="spogg_main_player_profile mb-2">
+											<span class="text-left"><img src="img/landing/great4.png" style="width:30%"></span>
+											<img src="img/landing/player1.jpg" class="player_img" style="width:100%">
+										</div>
+										<div class="spogg_main_player_info text-left">
+											<div class="spogg_main_player_info_1">
+												<span>22</span> 구승민
+											</div>
+											<div class="spogg_main_player_info_2">
+												<span>홀드</span>20
+											</div>
+										</div>
+									</div>
+								</td>
+								<td style="min-width: 150px;">
+									<div class="spogg_main_player_content text-center" onclick="location.href='player.html'">
+										<div class="spogg_main_player_profile mb-2">
+											<span class="text-left"><img src="img/landing/great4.png" style="width:30%"></span>
+											<img src="img/landing/player2.jpg" class="player_img" style="width:100%">
+										</div>
+										<div class="spogg_main_player_info text-left">
+											<div class="spogg_main_player_info_1">
+												<span>34</span> 세이브
+											</div>
+											<div class="spogg_main_player_info_2">
+												<span>세이브</span>25
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="spogg_mvp bg-white">
+						<div
+							class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+							<h6 class="m-0 font-weight-bold">부분별 TOP5 선수</h6>
+							<div class="dropdown no-arrow">
+								<a href="#"> 전체보기<i class="fas fa-chevron-right"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="spogg_mvp_player mobile_scroll bg-white">
+						<table>
+							<tr>
+								<td>
+									<div class="spogg_mvp_player_part">
+										<div class="spogg_mvp_player_part_title">타율 순위</div>
+										<div class="spogg_mvp_player_info">
+											<div class="spogg_mvp_player_img">
+												<img src="img/landing/player7.jpg" class="player_img">
+											</div>
+											<div class="spogg_mvp_player_content">
+												<table>
+													<tr>
+														<td>1등</td>
+														<td><span>31</span></td>
+														<td>손아섭</td>
+														<td>0.352</td>
+													</tr>
+													<tr>
+														<td>2등</td>
+														<td><span>09</span></td>
+														<td>정훈</td>
+														<td>0.295</td>
+													</tr>
+													<tr>
+														<td>3등</td>
+														<td><span>10</span></td>
+														<td>이대호</td>
+														<td>0.292</td>
+													</tr>
+													<tr>
+														<td>4등</td>
+														<td><span>13</span></td>
+														<td>안치홍</td>
+														<td>0.286</td>
+													</tr>
+													<tr>
+														<td>5등</td>
+														<td><span>06</span></td>
+														<td>마차도</td>
+														<td>0.280</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="spogg_mvp_player_part">
+										<div class="spogg_mvp_player_part_title">타점 순위</div>
+										<div class="spogg_mvp_player_info">
+											<div class="spogg_mvp_player_img">
+												<img src="img/landing/player12.jpg" class="player_img">
+											</div>
+											<div class="spogg_mvp_player_content">
+												<table>
+													<tr>
+														<td>1등</td>
+														<td><span>10</span></td>
+														<td>이대호</td>
+														<td>110</td>
+													</tr>
+													<tr>
+														<td>2등</td>
+														<td><span>08</span></td>
+														<td>전준우</td>
+														<td>96</td>
+													</tr>
+													<tr>
+														<td>3등</td>
+														<td><span>31</span></td>
+														<td>손아섭</td>
+														<td>85</td>
+													</tr>
+													<tr>
+														<td>4등</td>
+														<td><span>25</span></td>
+														<td>한동희</td>
+														<td>67</td>
+													</tr>
+													<tr>
+														<td>5등</td>
+														<td><span>06</span></td>
+														<td>마차도</td>
+														<td>67</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="spogg_mvp_player_part">
+										<div class="spogg_mvp_player_part_title">방어율 순위</div>
+										<div class="spogg_mvp_player_info">
+											<div class="spogg_mvp_player_img">
+												<img src="img/landing/player9.jpg" class="player_img">
+											</div>
+											<div class="spogg_mvp_player_content">
+												<table>
+													<tr>
+														<td>1등</td>
+														<td><span>58</span></td>
+														<td>스트레일리</td>
+														<td>2.50</td>
+													</tr>
+													<tr>
+														<td>2등</td>
+														<td><span>41</span></td>
+														<td>김대우</td>
+														<td>3.10</td>
+													</tr>
+													<tr>
+														<td>3등</td>
+														<td><span>22</span></td>
+														<td>구승민</td>
+														<td>3.58</td>
+													</tr>
+													<tr>
+														<td>4등</td>
+														<td><span>15</span></td>
+														<td>오현택</td>
+														<td>3.75</td>
+													</tr>
+													<tr>
+														<td>5등</td>
+														<td><span>34</span></td>
+														<td>김원중</td>
+														<td>3.94</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<!-- /.container-fluid -->
+			</div>
+			<!-- End of Main Content -->
+		</div>
+		<!-- End of Content Wrapper -->
+	</div>
+	<!-- End of Page Wrapper -->
+
+
+
+	<!-- Bootstrap core JavaScript-->
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>SPOGG</title>
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+<!-- Custom styles for this template-->
+<link href="css/sb-admin-2.min.css" rel="stylesheet">
+<link href="css/spogg_style.css" rel="stylesheet">
+<script src="vendor/jquery/jquery.min.js"></script>
+</head>
+
+<body id="page-top">
+
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+			<div id="mask"></div>
+			<!-- Main Content -->
+			<div id="content" class="bg_spogg_eee">
+
+				<!-- Topbar -->
+				<nav
+					class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow spogg_top_nav bg_spogg_color">
+
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav spogg_pc_Menu">
+						<li><a href="index.html" class="active">메인</a></li>
+						<li><a href="player_list.html">선수단</a></li>
+						<li><a href="schedule.html">스케줄</a></li>
+						<li><a href="recode.html">기록</a></li>
+						<li><a href="menu_more.html">더보기</a></li>
+					</ul>
+				</nav>
+				<!-- End of Topbar -->
+
+				<!-- Mobile Topbar -->
+				<nav class="spogg_mobile_Menu">
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav_mobile" id="spogg_mobile_Menu">
+						<li><a href="index.html"><img src="img/spogg/house_icon.png">메인</a></li>
+						<li><a href="player_list.html" class="active"><img src="img/spogg/group_icon_blue.png">선수단</a></li>
+						<li><a href="schedule.html"><img src="img/spogg/calender_icon.png">스케줄</a></li>
+						<li><a href="recode.html"><img src="img/spogg/sound_icon.png">기록</a></li>
+						<li><a href="menu_more.html"><img src="img/spogg/etc_icon.png" style="padding: 9px 0">더보기</a></li>
+					</ul>
+				</nav>
+
+				<!-- Mobile End of Topbar -->
+				<!--<script src="js/mobilemenu.js"></script>-->
+
+				<link rel="stylesheet" type="text/css" href="css/chart_style.css">
+				<script src="js/Chart.min.js"></script>
+				<script src="js/utils.js"></script>
+				<!-- Begin Page Content -->
+				<div class="container-fluid ">
+
+					<!-- Sub Page Heading -->
+					<nav class="navbar bg_spogg_color spogg_mobile_Menu_top">
+						<!--back (Topbar) -->
+						<button id="sidebarToggleTop"
+							class="btn btn-link rounded-circle mr-3" onclick="history.back()">
+							<i class="fas fa-arrow-left"></i>
+						</button>
+						<div class="subpage_title">선수단</div>
+					</nav>
+					<div class="spogg_player bg-white mb-4">
+						<table>
+							<tr>
+								<td rowspan="7">
+									<div class="spogg_playerImg">
+										<img src="img/spogg/player.jpg" class="player_img">
+									</div>
+									<div class="spogg_playerName">
+										<span>31</span> 손아섭
+									</div>
+								</td>
+								<th>주 활동 지역</th>
+								<td>부산</td>
+							</tr>
+							<tr>
+								<th>주 활동 리그</th>
+								<td>프로 1부</td>
+							</tr>
+							<tr>
+								<th>주 포지션</th>
+								<td>외야수</td>
+							</tr>
+							<tr>
+								<th>선출이력</th>
+								<td>선출</td>
+							</tr>
+							<tr>
+								<th>투/타</th>
+								<td>좌투좌타</td>
+							</tr>
+							<tr>
+								<th>생년월일</th>
+								<td>1988.03.18</td>
+							</tr>
+							<tr>
+								<th>신창/체중</th>
+								<td>174cm/84kg</td>
+							</tr>
+
+						</table>
+						<div class="reward">
+							<ul>
+								<li>리워드</li>
+								<li><img src="img/spogg/trophy_icon_blue.png"></li>
+								<li><img src="img/spogg/baseball_bat_icon.png"></li>
+								<li><img src="img/spogg/baseball_glove_icon.png"></li>
+								<li><img src="img/spogg/baseball_hits_icon.png"></li>
+								<li><img src="img/spogg/baseball_icon.png"></li>
+								<li><img src="img/spogg/trophy_icon_blue.png"></li>
+							</ul>
+						</div>
+					</div>
+					<div class="row mb-4 ">
+						<!-- 기록요약 -->
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="bg-white shadow mb-12 spogg_recode_sum">
+								<!-- Card Header -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold sunpage_sec_title">기록요약</h6>
+								</div>
+								<!-- Notice Body -->
+								<div class=" mobile_scroll">
+									<table class="table table-striped text-center">
+										<tr>
+											<td>RECORD</td>
+											<td>AVG</td>
+											<td>G</td>
+											<td>AB</td>
+											<td>H</td>
+											<td>HR</td>
+											<td>RBI</td>
+											<td>SB</td>
+											<td>OBP</td>
+											<td>SLG</td>
+											<td>OPS</td>
+										</tr>
+										<tr>
+											<td>10</td>
+											<td>0.350</td>
+											<td>50</td>
+											<td>246</td>
+											<td>86</td>
+											<td>10</td>
+											<td>70</td>
+											<td>34</td>
+											<td>0.412</td>
+											<td>0.497</td>
+											<td>0.909</td>
+										</tr>
+										<!--<tr>
+											<td>RECORD</td>
+											<td>AVG</td>
+											<td>G</td>
+											<td>AB</td>
+											<td>H</td>
+											<td>GR</td>
+											<td>RECORD</td>
+											<td>A</td>
+											<td>AB</td>
+											<td>H</td>
+											<td>RECORD</td>
+											<td>A</td>
+											<td>AB</td>
+											<td>H</td>
+											<td>RECORD</td>
+											<td>A</td>
+											<td>AB</td>
+											<td>H</td>
+										</tr>
+										<tr>
+											<td>10</td>
+											<td>0.502</td>
+											<td>73(9)</td>
+											<td>243</td>
+											<td>122</td>
+											<td>3</td>
+											<td>10</td>
+											<td>0.502</td>
+											<td>73(9)</td>
+											<td>243</td>
+											<td>122</td>
+											<td>3</td>
+											<td>10</td>
+											<td>0.502</td>
+											<td>73(9)</td>
+											<td>243</td>
+											<td>122</td>
+											<td>3</td>
+										</tr>-->
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row mb-4 ">
+						<!-- 기록요약 -->
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<div class="bg-white mb-12 spogg_recode_sum">
+								<!-- Card Header -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold sunpage_sec_title">그래프 1</h6>
+								</div>
+								<!-- Notice Body -->
+								<div class="row">
+									<div class="col-xs-6">
+										<canvas id="canvas1" width="365" height="365"></canvas>
+									</div>
+									<div class="col-xs-6">
+										<canvas id="canvas2" width="500" height="500"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row mb-4 ">
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<div class="bg-white shadow mb-12 spogg_recode_sum">
+								<!-- Card Header -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold sunpage_sec_title">그래프 2</h6>
+								</div>
+								<!-- Notice Body -->
+								<div class="row">
+									<div class="col-xs-12">
+										<canvas id="canvas3"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row mb-4 ">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="bg-white shadow mb-12 spogg_recode_sum">
+								<!-- Card Header -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold sunpage_sec_title">그래프 3</h6>
+								</div>
+								<!-- Notice Body -->
+								<div class="row">
+									<div class="col-xs-12">
+										<table class="league_table">
+											<thead>
+												<tr>
+													<th class="red_text">파워</th>
+													<th class="purple_text">정확성</th>
+													<th class="grren_text">선구안</th>
+													<th class="yellow_text">주루</th>
+													<th class="blue_text">스타성</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><div class="power_ss">
+															2루타<br>
+															<span>SS</span>
+														</div></td>
+													<td><div class="accuracy_a">
+															안타<br>
+															<span>A</span>
+														</div></td>
+													<td><div class="battingEye_d">
+															볼넷<br>
+															<span>D</span>
+														</div></td>
+													<td><div class="baserunning_b">
+															도루<br>
+															<span>B</span>
+														</div></td>
+													<td><div class="star_s">
+															경기<br>
+															<span>S</span>
+														</div></td>
+												</tr>
+												<tr>
+													<td><div class="power_sss">
+															장타<br>
+															<span>SSS</span>
+														</div></td>
+													<td><div class="accuracy_a">
+															타율<br>
+															<span>A</span>
+														</div></td>
+													<td><div class="battingEye_c">
+															삼진<br>
+															<span>C</span>
+														</div></td>
+													<td><div class="baserunning_a">
+															3루타<br>
+															<span>A</span>
+														</div></td>
+													<td><div class="star_s">
+															타점<br>
+															<span>S</span>
+														</div></td>
+												</tr>
+												<tr>
+													<td><div class="power_sss">
+															장타율<br>
+															<span>SSS</span>
+														</div></td>
+													<td><div class="accuracy_sss">
+															희생타<br>
+															<span>SSS</span>
+														</div></td>
+													<td><div class="battingEye_c">
+															볼넷/삼진<br>
+															<span>C</span>
+														</div></td>
+													<td><div class="baserunning_b">
+															특점<br>
+															<span>B</span>
+														</div></td>
+													<td><div class="star_ss">
+															홈런<br>
+															<span>SS</span>
+														</div></td>
+												</tr>
+												<tr>
+													<td><div class="power_ss">
+															순장타율<br>
+															<span>SS</span>
+														</div></td>
+													<td><div class="accuracy_a">
+															컨택성공률<br>
+															<span>A</span>
+														</div></td>
+													<td><div class="battingEye_b">
+															삼진율<br>
+															<span>B</span>
+														</div></td>
+													<td><div class="baserunning_c">
+															출루율<br>
+															<span>C</span>
+														</div></td>
+													<td><div class="star_s">
+															OPS<br>
+															<span>S</span>
+														</div></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row mb-4 ">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="bg-white shadow mb-12 spogg_recode_sum">
+								<!-- Card Header -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold sunpage_sec_title">현재 리그 요약</h6>
+								</div>
+								<!-- Notice Body -->
+								<div class="row">
+									<div class="col-xs-12">
+										<table class="league_table" style="font-size: 80%;">
+											<thead>
+												<tr>
+													<th>리그명</th>
+													<th>RECORD</th>
+													<th>AVG</th>
+													<th>G</th>
+													<th>AB</th>
+													<th>H</th>
+													<th>HR</th>
+													<th>RBI</th>
+													<th>SB</th>
+													<th>OBP</th>
+													<th>SLG</th>
+													<th>OPS</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>KB 리그</td>
+													<td>4</td>
+													<td>0.451</td>
+													<td>21</td>
+													<td>91</td>
+													<td>41</td>
+													<td>4</td>
+													<td>33</td>
+													<td>11</td>
+													<td>0.522</td>
+													<td>0.663</td>
+													<td>1.185</td>
+												</tr>
+												<tr>
+													<td>TO 리그</td>
+													<td>4</td>
+													<td>0.311</td>
+													<td>15</td>
+													<td>74</td>
+													<td>23</td>
+													<td>4</td>
+													<td>23</td>
+													<td>9</td>
+													<td>0.377</td>
+													<td>0.578</td>
+													<td>0.955</td>
+												</tr>
+												<tr>
+													<td>WA 리그</td>
+													<td>2</td>
+													<td>0.272</td>
+													<td>16</td>
+													<td>81</td>
+													<td>22</td>
+													<td>2</td>
+													<td>14</td>
+													<td>14</td>
+													<td>0.347</td>
+													<td>0.498</td>
+													<td>0.845</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row mb-4 ">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="bg-white shadow mb-12 spogg_recode_sum">
+								<!-- Card Header -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold sunpage_sec_title">리그A</h6>
+								</div>
+								<!-- Notice Body -->
+								<div class="row">
+									<div class="col-xs-6">
+										<canvas id="canvas4" width="365" height="365"></canvas>
+									</div>
+									<div class="col-xs-6">
+										<canvas id="canvas5" width="365" height="365"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row mb-4 ">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="bg-white shadow mb-12 spogg_recode_sum">
+								<!-- Card Header -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold sunpage_sec_title">리그B</h6>
+								</div>
+								<!-- Notice Body -->
+								<div class="row">
+									<div class="col-xs-6">
+										<canvas id="canvas6" width="365" height="365"></canvas>
+									</div>
+									<div class="col-xs-6">
+										<canvas id="canvas7" width="365" height="365"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row mb-4 ">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="bg-white shadow mb-12 spogg_recode_sum">
+								<!-- Card Header -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold sunpage_sec_title">그래프 4</h6>
+								</div>
+								<!-- Notice Body -->
+								<div class="row">
+									<div class="col-xs-12">
+										<canvas id="canvas8"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row mb-4 ">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="bg-white shadow mb-12 spogg_recode_sum">
+								<!-- Card Header -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold sunpage_sec_title">그래프 5</h6>
+								</div>
+								<!-- Notice Body -->
+								<div class="row">
+									<div class="col-xs-12">
+										<canvas id="canvas9"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row mb-4 ">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="bg-white shadow mb-12 spogg_recode_sum">
+								<!-- Card Header -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold sunpage_sec_title">최근 5년 기록 요약</h6>
+								</div>
+								<!-- Notice Body -->
+								<div class="row mobile_scroll">
+									<div class="col-xs-12">
+										<table class="league_table ">
+											<thead>
+												<tr>
+													<th>년도</th>
+													<th>RECORD</th>
+													<th>AVG</th>
+													<th>G</th>
+													<th>AB</th>
+													<th>H</th>
+													<th>HR</th>
+													<th>RBI</th>
+													<th>SB</th>
+													<th>OBP</th>
+													<th>SLG</th>
+													<th>OPS</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>2020</td>
+													<td>3</td>
+													<td>0.431</td>
+													<td>15</td>
+													<td>72</td>
+													<td>31</td>
+													<td>4</td>
+													<td>25</td>
+													<td>10</td>
+													<td>0.488</td>
+													<td>0.588</td>
+													<td>1.076</td>
+												</tr>
+												<tr>
+													<td>2019</td>
+													<td>2</td>
+													<td>0.283</td>
+													<td>12</td>
+													<td>53</td>
+													<td>15</td>
+													<td>3</td>
+													<td>11</td>
+													<td>7</td>
+													<td>0.351</td>
+													<td>0.454</td>
+													<td>0.805</td>
+												</tr>
+												<tr>
+													<td>2018</td>
+													<td>3</td>
+													<td>0.327</td>
+													<td>10</td>
+													<td>49</td>
+													<td>16</td>
+													<td>2</td>
+													<td>15</td>
+													<td>5</td>
+													<td>0.377</td>
+													<td>0.485</td>
+													<td>0.862</td>
+												</tr>
+												<tr>
+													<td>2017</td>
+													<td>1</td>
+													<td>0.268</td>
+													<td>8</td>
+													<td>41</td>
+													<td>11</td>
+													<td>0</td>
+													<td>9</td>
+													<td>8</td>
+													<td>0.325</td>
+													<td>0.422</td>
+													<td>0.747</td>
+												</tr>
+												<tr>
+													<td>2016</td>
+													<td>1</td>
+													<td>0.419</td>
+													<td>5</td>
+													<td>31</td>
+													<td>13</td>
+													<td>1</td>
+													<td>10</td>
+													<td>4</td>
+													<td>0.467</td>
+													<td>0.511</td>
+													<td>0.978</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row mb-4 ">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="bg-white shadow mb-12 spogg_recode_sum">
+								<!-- Card Header -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold sunpage_sec_title">그래프 6</h6>
+								</div>
+								<!-- Notice Body -->
+								<div class="row">
+									<div class="col-xs-12">
+										<canvas id="canvas10"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row mb-4 ">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="bg-white shadow mb-12 spogg_recode_sum">
+								<!-- Card Header -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold sunpage_sec_title">그래프 7</h6>
+								</div>
+								<!-- Notice Body -->
+								<div class="row">
+									<div class="col-xs-12">
+										<canvas id="canvas11"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+				</div>
+				<!-- /.container-fluid -->
+
+				<script>
+					var randomScalingFactor = function() {
+						return Math.round(Math.random() * 100);
+					};
+
+					var randomScalingFactor1 = function() {
+						return Math.random();
+					};
+
+					var color = Chart.helpers.color;
+
+					var config2 = {
+						type : 'radar',
+						data : {
+							labels : [ '파워', '정확성', '선구안', '주루', '스타성' ],
+							datasets : [
+									{
+										label : '내 기록',
+										backgroundColor : color('#5093ff')
+												.alpha(0.5).rgbString(),
+										borderColor : '#5093ff',
+										pointBackgroundColor : '#5093ff',
+										pointRadius : 0,
+										data : [ 100,
+												80,
+												30,
+												50,
+												90 ]
+									},
+									{
+										label : '리그 기록',
+										backgroundColor : color('#dbdbdb')
+												.alpha(0.2).rgbString(),
+										borderColor : '#dbdbdb',
+										pointBackgroundColor : '#dbdbdb',
+										pointRadius : 0,
+										data : [ 70,
+												70,
+												60,
+												60,
+												60 ]
+									} ]
+						},
+						options : {
+							legend : {
+								display : false,
+							},
+							title : {
+								display : true,
+								text : '레이더 차트'
+							},
+							responsive : true,
+							scale : {
+								ticks : {
+									beginAtZero : true
+								}
+							}
+						}
+					};
+
+					var MONTHS = [ 'January', 'February', 'March', 'April',
+							'May', 'June', 'July', 'August', 'September',
+							'October', 'November', 'December' ];
+					var horizontalBarChartData = {
+						labels : [ '파워', '정확성', '선구안', '주루', '스타성' ],
+						datasets : [
+								{
+									label : '내기 록',
+									backgroundColor : color('#5093ff').alpha(
+											0.5).rgbString(),
+									borderColor : '#5093ff',
+									borderWidth : 1,
+									data : [ 100, 80, 30, 50, 90 ]
+								},
+								{
+									label : '리그 기록',
+									backgroundColor : color('#dbdbdb').alpha(
+											0.3).rgbString(),
+									borderColor : '#dbdbdb',
+									data : [ 70, 70, 60, 60, 60 ]
+								} ],
+						options : {
+							legend : {
+								display : false
+							}
+						}
+
+					};
+
+					var barChartData = {
+						labels : [ 'A', 'B', 'C' ],
+						datasets : [
+								{
+									label : 'AVG',
+									backgroundColor : '#5093ff',
+									borderColor : '#5093ff',
+									borderWidth : 1,
+									data : [ 0.9, 0.8, 0.4]
+								},
+								{
+									label : '리그 AVG',
+									backgroundColor : '#dbdbdb',
+									borderColor : '#dbdbdb',
+									borderWidth : 1,
+									data : [ 0.8, 0.6, 0.6 ]
+								} ]
+
+					};
+
+					var barChartData1 = {
+						labels : [ 'A', 'B', 'C' ],
+						datasets : [
+								{
+									label : 'OBP',
+									backgroundColor : '#dbdbdb',
+									data : [ 0.5, 0.8, 0.9 ]
+								},
+								{
+									label : 'SLG',
+									backgroundColor : '#5093ff',
+									data : [ 0.2, 0.3, 0.5 ]
+								},
+								{
+									label : 'OPS',
+									backgroundColor : window.chartColors.red,
+									data : [ 0.3, 0.5, 0.7 ],
+								} ]
+
+					};
+
+					var barChartData2 = {
+						labels : [ 'A', 'B', 'C', 'D', 'F' ],
+						datasets : [
+								{
+									label : 'OBP',
+									backgroundColor : '#dbdbdb',
+									data : [ 1.2, 0.4, 1.0, 0.8, 1.4 ]
+								},
+								{
+									label : 'SLG',
+									backgroundColor : '#5093ff',
+									data : [ 1.6, 0.8, 1.2, 1.1, 2.0 ]
+								},
+								{
+									label : 'OPS',
+									backgroundColor : window.chartColors.red,
+									data : [ 1.8, 1.6, 1.4, 1.3, 2.4 ]
+								} ]
+
+					};
+
+					var config4 = {
+						type : 'line',
+						data : {
+							labels : [ '2016', '2017', '2018', '2019', '2020' ],
+							datasets : [
+									{
+										label : 'AVG',
+										fill : false,
+										backgroundColor : '#5093ff',
+										borderColor : '#5093ff',
+										data : [ 0.9, 0.8, 0.6, 0.8, 0.5 ]
+									},
+									{
+										label : '리그 AVG',
+										fill : false,
+										backgroundColor : '#dbdbdb',
+										borderColor : '#dbdbdb',
+										data : [ 0.7, 0.5, 0.6, 0.6, 0.6 ],
+									} ]
+						},
+						options : {
+							responsive : true,
+							legend : {
+								position : 'bottom',
+							},
+							title : {
+								display : true,
+								text : 'Multiline 차트'
+							},
+							scales : {
+								xAxes : [ {
+									stacked : false,
+								} ],
+								yAxes : [ {
+									stacked : false,
+									ticks : {
+										min : 0,
+										max : 1
+									}
+								} ]
+							}
+						}
+					};
+
+					window.onload = function() {
+						var ctx = document.getElementById('canvas1')
+								.getContext('2d');
+						window.myDoughnut = new Chart(
+								ctx,
+								{
+									type : 'doughnut',
+									plugins : [ {
+										beforeDraw : function(chart) {
+											var width = chart.chart.width, height = chart.chart.height, ctx = chart.chart.ctx;
+
+											ctx.restore();
+											var fontSize = (height / 114)
+													.toFixed(2);
+											ctx.font = fontSize
+													+ "em sans-serif";
+											ctx.textBaseline = "middle";
+
+											var text = "75%", textX = Math
+													.round((width - ctx
+															.measureText(text).width) / 2), textY = height / 2 + 23;
+
+											ctx.fillText(text, textX, textY);
+											ctx.save();
+										}
+									} ],
+									data : {
+										datasets : [ {
+											data : [ 75,
+													25, ],
+											backgroundColor : [ '#5093ff',
+													'#dbdbdb', ],
+											label : 'Dataset 1'
+										} ],
+										labels : [ '내 기록', ]
+									},
+									options : {
+										responsive : true,
+										legend : {
+											display : false,
+										},
+										title : {
+											display : true,
+											text : '도넛 차트'
+										},
+										centerText : {
+											display : true,
+											text : "280"
+										},
+										animation : {
+											animateScale : true,
+											animateRotate : true
+										}
+									}
+								});
+
+						window.myRadar = new Chart(document
+								.getElementById('canvas2'), config2);
+
+						var ctx2 = document.getElementById('canvas3')
+								.getContext('2d');
+						window.myHorizontalBar = new Chart(ctx2, {
+							type : 'horizontalBar',
+							data : horizontalBarChartData,
+							options : {
+								// Elements options apply to all of the options unless overridden in a dataset
+								// In this case, we are setting the border of each horizontal bar to be 2px wide
+								elements : {
+									rectangle : {
+										borderWidth : 2,
+									}
+								},
+								responsive : true,
+								legend : {
+									position : 'bottom',
+								},
+								title : {
+									display : true,
+									text : '가로 막대 차트'
+								}
+							}
+						});
+
+						var ctx3 = document.getElementById('canvas4')
+								.getContext('2d');
+						window.myDoughnut1 = new Chart(
+								ctx3,
+								{
+									type : 'doughnut',
+									plugins : [ {
+										beforeDraw : function(chart) {
+											var width = chart.chart.width, height = chart.chart.height, ctx = chart.chart.ctx;
+
+											ctx.restore();
+											var fontSize = (height / 114)
+													.toFixed(2);
+											ctx.font = fontSize
+													+ "em sans-serif";
+											ctx.textBaseline = "middle";
+
+											var text = "75%", textX = Math
+													.round((width - ctx
+															.measureText(text).width) / 2), textY = height / 2 + 23;
+
+											ctx3.fillText(text, textX, textY);
+											ctx3.save();
+										}
+									} ],
+									data : {
+										datasets : [ {
+											data : [ 75, 25],
+											backgroundColor : [ '#5093ff',
+													'#dbdbdb', ],
+											label : 'Dataset 1'
+										} ],
+										labels : [ '내 기록', ]
+									},
+									options : {
+										responsive : true,
+										legend : {
+											display : false,
+										},
+										title : {
+											display : true,
+											text : '도넛 차트'
+										},
+										centerText : {
+											display : true,
+											text : "280"
+										},
+										animation : {
+											animateScale : true,
+											animateRotate : true
+										}
+									}
+								});
+
+						var ctx4 = document.getElementById('canvas5')
+								.getContext('2d');
+						window.myDoughnut1 = new Chart(
+								ctx4,
+								{
+									type : 'doughnut',
+									plugins : [ {
+										beforeDraw : function(chart) {
+											var width = chart.chart.width, height = chart.chart.height, ctx = chart.chart.ctx;
+
+											ctx.restore();
+											var fontSize = (height / 114)
+													.toFixed(2);
+											ctx.font = fontSize
+													+ "em sans-serif";
+											ctx.textBaseline = "middle";
+
+											var text = "60%", textX = Math
+													.round((width - ctx
+															.measureText(text).width) / 2), textY = height / 2 + 23;
+
+											ctx4.fillText(text, textX, textY);
+											ctx4.save();
+										}
+									} ],
+									data : {
+										datasets : [ {
+											data : [ 60, 40 ],
+											backgroundColor : [ '#5093ff',
+													'#dbdbdb', ],
+											label : 'Dataset 1'
+										} ],
+										labels : [ '내 기록', ]
+									},
+									options : {
+										responsive : true,
+										legend : {
+											display : false,
+										},
+										title : {
+											display : true,
+											text : '도넛 차트'
+										},
+										centerText : {
+											display : true,
+											text : "280"
+										},
+										animation : {
+											animateScale : true,
+											animateRotate : true
+										}
+									}
+								});
+
+						var ctx5 = document.getElementById('canvas6')
+								.getContext('2d');
+						window.myDoughnut1 = new Chart(
+								ctx5,
+								{
+									type : 'doughnut',
+									plugins : [ {
+										beforeDraw : function(chart) {
+											var width = chart.chart.width, height = chart.chart.height, ctx = chart.chart.ctx;
+
+											ctx.restore();
+											var fontSize = (height / 114)
+													.toFixed(2);
+											ctx.font = fontSize
+													+ "em sans-serif";
+											ctx.textBaseline = "middle";
+
+											var text = "80%", textX = Math
+													.round((width - ctx
+															.measureText(text).width) / 2), textY = height / 2 + 23;
+
+											ctx5.fillText(text, textX, textY);
+											ctx5.save();
+										}
+									} ],
+									data : {
+										datasets : [ {
+											data : [ 80, 20 ],
+											backgroundColor : [ '#5093ff',
+													'#dbdbdb', ],
+											label : 'Dataset 1'
+										} ],
+										labels : [ '내 기록', ]
+									},
+									options : {
+										responsive : true,
+										legend : {
+											display : false,
+										},
+										title : {
+											display : true,
+											text : '도넛 차트'
+										},
+										centerText : {
+											display : true,
+											text : "280"
+										},
+										animation : {
+											animateScale : true,
+											animateRotate : true
+										}
+									}
+								});
+
+						var ctx6 = document.getElementById('canvas7')
+								.getContext('2d');
+						window.myDoughnut1 = new Chart(
+								ctx6,
+								{
+									type : 'doughnut',
+									plugins : [ {
+										beforeDraw : function(chart) {
+											var width = chart.chart.width, height = chart.chart.height, ctx = chart.chart.ctx;
+
+											ctx.restore();
+											var fontSize = (height / 114)
+													.toFixed(2);
+											ctx.font = fontSize
+													+ "em sans-serif";
+											ctx.textBaseline = "middle";
+
+											var text = "50%", textX = Math
+													.round((width - ctx
+															.measureText(text).width) / 2), textY = height / 2 + 23;
+
+											ctx6.fillText(text, textX, textY);
+											ctx6.save();
+										}
+									} ],
+									data : {
+										datasets : [ {
+											data : [ 50, 50 ],
+											backgroundColor : [ '#5093ff',
+													'#dbdbdb', ],
+											label : 'Dataset 1'
+										} ],
+										labels : [ '내 기록', ]
+									},
+									options : {
+										responsive : true,
+										legend : {
+											display : false,
+										},
+										title : {
+											display : true,
+											text : '도넛 차트'
+										},
+										centerText : {
+											display : true,
+											text : "280"
+										},
+										animation : {
+											animateScale : true,
+											animateRotate : true
+										}
+									}
+								});
+
+						var ctx7 = document.getElementById('canvas8')
+								.getContext('2d');
+						window.myBar = new Chart(ctx7, {
+							type : 'bar',
+							data : barChartData,
+							options : {
+								responsive : true,
+								legend : {
+									position : 'bottom',
+								},
+								title : {
+									display : true,
+									text : '세로 막대 차트'
+								}
+							}
+						});
+
+						var ctx8 = document.getElementById('canvas9')
+								.getContext('2d');
+						window.myBar = new Chart(ctx8, {
+							type : 'bar',
+							data : barChartData1,
+							options : {
+								title : {
+									display : true,
+									text : '스택 바 차트'
+								},
+								tooltips : {
+									mode : 'index',
+									intersect : false
+								},
+								responsive : true,
+								legend : {
+									position : 'bottom',
+								},
+								scales : {
+									xAxes : [ {
+										stacked : true,
+									} ],
+									yAxes : [ {
+										stacked : true,
+										ticks : {
+											min : 0,
+											max : 2
+										}
+									} ]
+								}
+							}
+						});
+
+						var ctx9 = document.getElementById('canvas10')
+								.getContext('2d');
+						window.myLine = new Chart(ctx9, config4);
+
+						var ctx10 = document.getElementById('canvas11')
+								.getContext('2d');
+						window.myBar = new Chart(ctx10, {
+							type : 'bar',
+							data : barChartData2,
+							options : {
+								title : {
+									display : true,
+									text : '스택 바 차트'
+								},
+								tooltips : {
+									mode : 'index',
+									intersect : false
+								},
+								responsive : true,
+								legend : {
+									position : 'bottom',
+								},
+								scales : {
+									xAxes : [ {
+										stacked : true,
+									} ],
+									yAxes : [ {
+										stacked : true
+									} ]
+								}
+							}
+						});
+
+					}
+				</script>
+
+			</div>
+			<!-- End of Main Content -->
+
+		</div>
+		<!-- End of Content Wrapper -->
+
+	</div>
+	<!-- End of Page Wrapper -->
+
+
+
+	<!-- Bootstrap core JavaScript-->
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Page level plugins -->
+	<script src="vendor/chart.js/Chart.min.js"></script>
+
+
+</body>
+
+</html>
+
+

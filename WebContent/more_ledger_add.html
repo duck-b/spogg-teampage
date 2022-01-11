@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>SPOGG</title>
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+<!-- Custom styles for this template-->
+<link href="css/sb-admin-2.min.css" rel="stylesheet">
+<link href="css/spogg_style.css" rel="stylesheet">
+<script src="vendor/jquery/jquery.min.js"></script>
+</head>
+
+<body id="page-top">
+
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+			<div id="mask"></div>
+			<!-- Main Content -->
+			<div id="content" class="bg_spogg_eee">
+
+				<!-- Topbar -->
+				<nav
+					class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow spogg_top_nav bg_spogg_color">
+
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav spogg_pc_Menu">
+						<li><a href="index.jsp" class="active">메인</a></li>
+						<li><a href="player_list.jsp">선수단</a></li>
+						<li><a href="schedule.jsp">스케줄</a></li>
+						<li><a href="recode.jsp">기록</a></li>
+						<li><a href="menu_more.jsp">더보기</a></li>
+					</ul>
+				</nav>
+				<!-- End of Topbar -->
+
+				<!-- Mobile Topbar -->
+				<nav class="spogg_mobile_Menu">
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav_mobile"
+						id="spogg_mobile_Menu">
+						<li><a href="index.jsp" class="active"><img
+								src="img/spogg/house_icon_blue.png">메인</a></li>
+						<li><a href="player_list.jsp"><img
+								src="img/spogg/group_icon.png">선수단</a></li>
+						<li><a href="schedule.jsp"><img
+								src="img/spogg/calender_icon.png">스케줄</a></li>
+						<li><a href="recode.jsp"><img
+								src="img/spogg/sound_icon.png">기록</a></li>
+						<li><a href="menu_more.jsp"><img
+								src="img/spogg/etc_icon.png" style="padding: 9px 0">더보기</a></li>
+					</ul>
+				</nav>
+
+				<!-- Mobile End of Topbar -->
+				<script src="js/mobilemenu.js"></script>
+
+				<!-- Begin Page Content -->
+				<div class="container-fluid">
+
+					<!-- Sub Page Heading -->
+					<nav class="navbar bg_spogg_color spogg_mobile_Menu_top">
+						<!--back (Topbar) -->
+						<button id="sidebarToggleTop"
+							class="btn btn-link rounded-circle mr-3" onclick="history.back()">
+							<i class="fas fa-arrow-left"></i>
+						</button>
+						<div class="subpage_title">리그 생성</div>
+					</nav>
+
+					<!-- Content Row -->
+					<div class="row more_upload">
+						<!-- Earnings (Monthly) Card Example -->
+						<div class="col-xs-12 col-sm-12 col-md-12 mb-4 more_teamInfo">
+							<div class="row bg-white nav-tabs mb-12">
+								<div class="col-xs-3 p-sm-3 more_uploadtitle">
+									<label for="">리그명</label>
+								</div>
+								<div class="col-xs-9 p-sm-3 text-center">
+									<input type="text" class="form-control" id=""
+										placeholder="리그명 입력">
+								</div>
+							</div>
+							<div class="row bg-white nav-tabs mb-12 inputselect">
+								<div class="col-xs-3 p-sm-3 more_uploadtitle">
+									<label for="">년도</label>
+								</div>
+								<div class="col-xs-9 p-sm-3 text-center">
+									<select> 
+										<option value="2020년">2020년</option>
+										<option value="2020년">1999년</option>
+										<option value="2020년">1998년</option>
+										<option value="2020년">1997년</option>
+										<option value="2020년">1996년</option>
+										<option value="2020년">1995년</option>
+										<option value="2020년">1994년</option>
+										<option value="2020년">1993년</option>
+										<option value="2020년">1992년</option>
+										<option value="2020년">1991년</option>
+										<option value="2020년">1990년</option>
+										<option value="2020년">1989년</option> 
+									</select>
+								</div>
+							</div>
+							<div class="row bg-white nav-tabs mb-12">
+								<div class="col-xs-3 p-sm-3 more_uploadtitle2">
+									<label for="">팀명</label>
+								</div>
+								<div class="col-xs-9 p-sm-3 more_teamInfo_label">
+									<textarea rows="10" cols="30" placeholder="팀명"></textarea>
+								</div>
+							</div>
+							<div class="row bg-white nav-tabs mb-12">
+								<div class="col-xs-3 p-sm-3 more_uploadtitle">
+									<label for="">리그<br>로고
+									</label>
+								</div>
+								<div class="col-xs-9 p-sm-3 text-center inputfile">
+									<input type="file" class="filestyle" data-icon="false"
+										placeholder="리그로고">
+								</div>
+							</div>
+							<div class="row bg-white nav-tabs mb-12">
+								<div class="col-xs-12 p-sm-3 text-center">
+									<input type="submit" value="리그 등록">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /.container-fluid -->
+
+				</div>
+
+			</div>
+			<!-- End of Main Content -->
+
+		</div>
+		<!-- End of Content Wrapper -->
+
+	</div>
+	<!-- End of Page Wrapper -->
+
+
+
+	<!-- Bootstrap core JavaScript-->
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Core plugin JavaScript-->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom scripts for all pages-->
+	<script src="js/sb-admin-2.min.js"></script>
+
+
+</body>
+
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/bootstrap-filestyle.min.js">
+	
+</script>
+<script>
+	$('#BSbtndanger').filestyle({
+		buttonName : 'btn-danger',
+		buttonText : ' 선택'
+	});
+	$('#BSbtnsuccess').filestyle({
+		buttonName : 'btn-success',
+		buttonText : ' Open'
+	});
+	$('#BSbtninfo').filestyle({
+		buttonName : 'btn-info',
+		buttonText : ' Select a File'
+	});
+</script>
+

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>SPOGG</title>
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+<!-- Custom styles for this template-->
+<link href="css/sb-admin-2.min.css" rel="stylesheet">
+<link href="css/spogg_style.css" rel="stylesheet">
+<script src="vendor/jquery/jquery.min.js"></script>
+</head>
+
+<body id="page-top">
+
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+			<div id="mask"></div>
+			<!-- Main Content -->
+			<div id="content" class="bg_spogg_eee">
+
+				<!-- Topbar -->
+				<nav
+					class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow spogg_top_nav bg_spogg_color">
+
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav spogg_pc_Menu">
+						<li><a href="index.html" class="active">메인</a></li>
+						<li><a href="player_list.html">선수단</a></li>
+						<li><a href="schedule.html">스케줄</a></li>
+						<li><a href="recode.html">기록</a></li>
+						<li><a href="menu_more.html">더보기</a></li>
+					</ul>
+				</nav>
+				<!-- End of Topbar -->
+
+				<!-- Mobile Topbar -->
+				<nav class="spogg_mobile_Menu">
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav_mobile" id="spogg_mobile_Menu">
+						<li><a href="index.html"><img src="img/spogg/house_icon.png">메인</a></li>
+						<li><a href="player_list.html"><img src="img/spogg/group_icon.png">선수단</a></li>
+						<li><a href="schedule.html" class="active"><img src="img/spogg/calender_icon_blue.png">스케줄</a></li>
+						<li><a href="recode.html"><img src="img/spogg/sound_icon.png">기록</a></li>
+						<li><a href="menu_more.html"><img src="img/spogg/etc_icon.png" style="padding: 9px 0">더보기</a></li>
+					</ul>
+				</nav>
+
+				<!-- Mobile End of Topbar -->
+				<!--<script src="js/mobilemenu.js"></script>-->
+
+
+
+				<link href='lib/main.css' rel='stylesheet' />
+				<script src='lib/main.js'></script>
+				<script src='lib/locales-all.js'></script>
+
+				<script>
+					document.addEventListener('DOMContentLoaded', function() {
+
+						/*
+							fullCalendar 사용
+							https://velog.io/@devyang97/FullCalendar-v4-%EC%98%B5%EC%85%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%A0%95%EB%A6%AC
+							
+						 */
+						var date = new Date();
+						var year = date.getFullYear();
+						var month = new String(date.getMonth() + 1);
+						var day = new String(date.getDate());
+						var nowdate = "";
+						// 한자리수일 경우 0을 채워준다. 
+						if (month.length == 1) {
+							month = "0" + month;
+						}
+						if (day.length == 1) {
+							day = "0" + day;
+						}
+						nowdate = year + "-" + month + "-" + day;
+
+						var initialLocaleCode = 'ko';
+						var localeSelectorEl = document
+								.getElementById('locale-selector');
+						var calendarEl = document.getElementById('calendar');
+
+						var calendar = new FullCalendar.Calendar(calendarEl, {
+							headerToolbar : {
+								left : 'title',//today
+								center : '',
+								right : 'prev,next'
+							},
+							height : 'parent',
+							contentHeight : 'auto',
+							initialDate : nowdate,
+							locale : initialLocaleCode,
+							buttonIcons : false, // show the prev/next text
+							weekNumbers : false,
+							navLinks : false, // can click day/week names to navigate views
+							editable : true,
+							dayMaxEvents : true, // allow "more" link when too many events
+							selectable : true,
+							events : [
+								{	
+									id : 1,
+									title : 'vs KIA 타이거즈',
+									start : '2020-11-07',
+									end :'2020-11-07',
+									backgroundColor : '#FF7A50',
+									color : "#FF7A50",
+									textColor : "#FFFFFF"
+								},{
+									id : 2,
+									title : 'vs 키움 히어로즈',
+									start : '2020-11-14',
+									end :'2020-11-14',
+									backgroundColor : '#FFB950',
+									color : "#FFB950",
+									textColor : "#FFFFFF"
+								},{
+									id : 3,
+									title : '올해 회비 납부바랍니다',
+									start : '2020-11-20',
+									end :'2020-11-20',
+									backgroundColor : '#FFD850',
+									color : "#FFD850",
+									textColor : "#FFFFFF"
+								},{
+									id : 4,
+									title : 'vs 삼성 라이온즈',
+									start : '2020-11-28',
+									end :'2020-11-28',
+									backgroundColor : '#FF7A50',
+									color : "#FF7A50",
+									textColor : "#FFFFFF"
+								},{
+									id : 5,
+									title : 'vs KT 위즈',
+									start : '2020-12-05',
+									end :'2020-12-05',
+									backgroundColor : '#FF7A50',
+									color : "#FF7A50",
+									textColor : "#FFFFFF"
+								},{
+									id : 6,
+									title : 'vs 한화 이글스',
+									start : '2020-12-10',
+									end :'2020-12-10',
+									backgroundColor : '#FFB950',
+									color : "#FFB950",
+									textColor : "#FFFFFF"
+								},{
+									id : 7,
+									title : 'vs NC 다이노스',
+									start : '2020-12-19',
+									end :'2020-12-19',
+									backgroundColor : '#FF7A50',
+									color : "#FF7A50",
+									textColor : "#FFFFFF"
+								},{
+									id : 8,
+									title : 'vs SK 와이번스',
+									start : '2020-12-24',
+									end :'2020-12-24',
+									backgroundColor : '#FFB950',
+									color : "#FFB950",
+									textColor : "#FFFFFF"
+								},{
+									id: 9,
+									title : 'vs LG 트윈스',
+									start : '2020-12-30',
+									end :'2020-12-30',
+									backgroundColor : '#FF7A50',
+									color : "#FF7A50",
+									textColor : "#FFFFFF"
+								},{
+									id : 10,
+									title : '회식',
+									start : '2020-12-31',
+									end :'2020-12-31',
+									backgroundColor : '#78EA83',
+									color : "#78EA83",
+									textColor : "#FFFFFF"
+								}
+							/* 스케줄에 입력 될 내용  */
+							/*{
+								title : 'All Day Event',
+								start : nowdate,
+								id : 1,
+								backgroundColor : 'red',
+								color : "#FF0000",
+								textColor : "#FFFF00"
+							}, {
+								title : '12312312312 Long Event',
+								start : '2020-10-21',
+								end : '2020-10-21',
+								id : 2,
+								backgroundColor : 'orange'
+							},{
+								title : '12312312312 Long Event',
+								start : '2020-11-25',
+								end : '2020-11-25',
+								id : 2,
+								backgroundColor : 'orange'
+							}, {
+								groupId : 999,
+								title : 'Repeating Event',
+								start : '2020-11-25T16:00:00'
+							}, {
+								groupId : 999,
+								title : 'Repeating Event',
+								start : '2020-09-09T16:00:00'
+							}, {
+								groupId : 999,
+								title : 'Repeating Event',
+								start : '2020-09-16T16:00:00'
+							}, {
+								title : 'Conference',
+								start : '2020-11-11',
+								end : '2020-11-13'
+							}, {
+								title : 'Meeting',
+								start : '2020-11-12T10:30:00',
+								end : '2020-11-12T12:30:00'
+							}, {
+								title : 'Lunch',
+								start : '2020-11-18T12:00:00'
+							}, {
+								title : 'Meeting',
+								start : '2020-11-22T14:30:00'
+							}, {
+								title : 'Happy Hour',
+								start : '2020-11-14T17:30:00',
+
+							}, {
+								title : 'Dinner',
+								start : '2020-11-09T20:00:00'
+							}, {
+								title : 'Birthday Party',
+								start : '2020-09-13T07:00:00'
+							}*/ ],
+							eventClick : function(info) {
+								wrapWindowByMask(info);
+								return false;
+							},
+							eventAfterRender : function(event, element, view) {
+								var activityColors = [ "red", "yellow",
+										"green", "blue" ];
+								element.children().css({
+									"background-color" : "red"
+								})
+								for (x = 0; x < activityColors[0].length; x++) {
+									if (event.id == activityColors[0][x]) {
+
+									}
+								}
+
+							}
+						});
+
+						calendar.render();
+
+						// when the selected option changes, dynamically change the calendar option
+						localeSelectorEl.addEventListener('change', function() {
+							if (this.value) {
+								calendar.setOption('locale', this.value);
+							}
+						});
+
+					});
+				</script>
+			
+				<script type="text/javascript">
+					//<![CDATA[
+					function wrapWindowByMask(info) {
+						
+						//화면의 높이와 너비를 구한다.
+						var maskHeight = $(document).height();
+						var maskWidth = $(window).width();
+
+						//마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
+						$("#mask").css({
+							"width" : maskWidth,
+							"height" : maskHeight
+						});
+
+						//애니메이션 효과 - 일단 0초동안 까맣게 됐다가 60% 불투명도로 간다.
+
+						$("#mask").fadeIn(0);
+						$("#mask").fadeTo("slow", 0.6);
+
+						//윈도우 같은 거 띄운다.
+						$(".window").show();
+						//console.log(info.event._instance.range.start);
+						//console.log(info.event._def.title);
+						var schedul_id = info.event._def.publicId;
+						var start_date = info.event._instance.range.start;
+						var sYear = start_date.getFullYear();
+						var sMonth = start_date.getMonth() + 1;
+						var sDate = start_date.getDate();
+
+						sMonth = sMonth > 9 ? sMonth : "0" + sMonth;
+						sDate  = sDate > 9 ? sDate : "0" + sDate;
+						//console.log(sYear+"-"+sMonth+"-"+sDate);
+						
+						var click_date = sYear+"-"+sMonth+"-"+sDate;
+						document.getElementById('click_date').text = click_date;
+
+						for(var i=1; i<=10; i++){
+							if(i == schedul_id){
+								document.getElementById('card_'+i).style.display = "block";
+							}else{
+								document.getElementById('card_'+i).style.display = "none";
+							}
+						}
+					}
+
+					$(document).ready(function() {
+						//검은 막을 눌렀을 때
+						$("#mask").click(function() {
+							//$(this).hide();
+							//$(".window").hide();
+							popupHide();
+						});
+					});
+					function popupHide(){
+						$("#mask").hide();
+						$(".window").hide();
+					}
+
+					//]]>
+				</script>
+
+
+
+				<div class="bg-white" style="position: relative; overflow: hidden;">
+					<div id="mask"></div>
+					<div class="window">
+						<div>
+							<div class="item active">
+								<div class="cal_date"><a id="click_date">2020년 08월 30일</a><span><a onclick="javascript:popupHide();">X</a></span></div> 
+								<div class="accordion" id="accordionExample">
+									<!-- 
+										리그경기일 경우 
+										참여인원 / 참여버튼 / 불참버튼
+									 -->
+									<div class="card" id="card_1">
+										<div class="card-header" id="heading_1">
+											<h2 class="clearfix mb-0">
+												<!-- 
+													a태그 - 타이틀 앞에 네모 컬러 지정
+													파랑 : event-blue
+													빨강 : event-red
+													노랑 : event-yellow
+													주황 : event-orange
+													초록 : event-green
+												 -->
+												<a class="btn btn-link collapsed event-red"
+													data-toggle="collapse" data-target="#collapse_1"
+													aria-expanded="false" aria-controls="collapse_1"> <span>&nbsp&nbsp&nbsp&nbsp</span>vs KIA 타이거즈
+													<b><i class="fas fa-angle-down"></i></b>
+												</a>
+											</h2>
+										</div>
+										<div id="collapse_1" class="collapse" aria-labelledby="heading_1" data-parent="#accordionExample">
+											<div class="card-body">
+												<table>
+													<tr>
+														<th>시작일</th>
+														<td>2020-11-07 08:00</td>
+													</tr>
+													<tr>
+														<th>종료일</th>
+														<td>2020-11-07 10:00</td>
+													</tr>
+													<tr>
+														<th>장 소</th>
+														<td>사직 야구장</td>
+													</tr>
+													<tr>
+														<th style="vertical-align: top;">내 용</th>
+														<td>우천시 경기가 취소 될 수 있습니다.</td>
+													</tr>
+												</table>
+												<div class="text-center payment_people" onclick="location.href='numberofpeople.html'">참여인원 9명</div>
+												<div class="payment_btn2 text-center">
+													<button class="payment_btn2_blue">참여</button>
+													<button class="payment_btn2_gray">불참</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card" id="card_2">
+										<div class="card-header" id="heading_2">
+											<h2 class="clearfix mb-0">
+												<a class="btn btn-link collapsed event-orange"
+													data-toggle="collapse" data-target="#collapse_2"
+													aria-expanded="false" aria-controls="collapse_2"> <span>&nbsp&nbsp&nbsp&nbsp</span>vs 키움 히어로즈
+													<b><i class="fas fa-angle-down"></i></b>
+												</a>
+											</h2>
+										</div>
+										<div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#accordionExample">
+											<div class="card-body">
+												<table>
+													<tr>
+														<th>시작일</th>
+														<td>2020-11-14 14:00</td>
+													</tr>
+													<tr>
+														<th>종료일</th>
+														<td>2020-11-14 16:00</td>
+													</tr>
+													<tr>
+														<th>장 소</th>
+														<td>고척스카이돔</td>
+													</tr>
+													<tr>
+														<th style="vertical-align: top;">내 용</th>
+														<td>친선전 경기입니다</td>
+													</tr>
+												</table>
+												<div class="text-center payment_people" onclick="location.href='numberofpeople.html'">참여인원 9명</div>
+												<div class="payment_btn2 text-center">
+													<button class="payment_btn2_blue">참여</button>
+													<button class="payment_btn2_gray">불참</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card" id="card_3">
+										<div class="card-header" id="heading_3">
+											<h2 class="clearfix mb-0">
+												<a class="btn btn-link collapsed event-yellow"
+													data-toggle="collapse" data-target="#collapse_3"
+													aria-expanded="false" aria-controls="collapse_3"> <span>&nbsp&nbsp&nbsp&nbsp</span>올해 회비 납부 바랍니다
+													<b><i class="fas fa-angle-down"></i></b>
+												</a>
+											</h2>
+										</div>
+										<div id="collapse_3" class="collapse" aria-labelledby="heading_3" data-parent="#accordionExample">
+											<div class="card-body">
+												<table>
+													<tr>
+														<th>시작일</th>
+														<td>2020-11-20 10:00</td>
+													</tr>
+													<tr>
+														<th>종료일</th>
+														<td>2020-12-31 23:59</td>
+													</tr>
+													<tr>
+														<th>장 소</th>
+														<td>롯데 자이언츠 통장</td>
+													</tr>
+													<tr>
+														<th style="vertical-align: top;">내 용</th>
+														<td>올해 끝나기 전에 반드시 납부 바랍니다.</td>
+													</tr>
+												</table>
+												<div class="text-center payment_people" onclick="location.href='numberofpeople.html'">납부인원 5명</div>
+												<div class="payment_btn1 text-center">
+													<button class="payment_btn2_blue">납부완료</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card" id="card_4">
+										<div class="card-header" id="heading_4">
+											<h2 class="clearfix mb-0">
+												<a class="btn btn-link collapsed event-red"
+													data-toggle="collapse" data-target="#collapse_4"
+													aria-expanded="false" aria-controls="collapse_4"> <span>&nbsp&nbsp&nbsp&nbsp</span>vs 삼성 라이온즈
+													<b><i class="fas fa-angle-down"></i></b>
+												</a>
+											</h2>
+										</div>
+										<div id="collapse_4" class="collapse" aria-labelledby="heading_4" data-parent="#accordionExample">
+											<div class="card-body">
+												<table>
+													<tr>
+														<th>시작일</th>
+														<td>2020-11-28 10:00</td>
+													</tr>
+													<tr>
+														<th>종료일</th>
+														<td>2020-11-28 12:00</td>
+													</tr>
+													<tr>
+														<th>장 소</th>
+														<td>삼성 라이온즈 파크</td>
+													</tr>
+													<tr>
+														<th style="vertical-align: top;">내 용</th>
+														<td>우천시 경기가 취소 될 수 있습니다.</td>
+													</tr>
+												</table>
+												<div class="text-center payment_people" onclick="location.href='numberofpeople.html'">참여인원 5명</div>
+												<div class="payment_btn2 text-center">
+													<button class="payment_btn2_blue">참여</button>
+													<button class="payment_btn2_gray">불참</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card" id="card_5">
+										<div class="card-header" id="heading_5">
+											<h2 class="clearfix mb-0">
+												<a class="btn btn-link collapsed event-red"
+													data-toggle="collapse" data-target="#collapse_5"
+													aria-expanded="false" aria-controls="collapse_5"> <span>&nbsp&nbsp&nbsp&nbsp</span>vs KT 위즈
+													<b><i class="fas fa-angle-down"></i></b>
+												</a>
+											</h2>
+										</div>
+										<div id="collapse_5" class="collapse" aria-labelledby="heading_5" data-parent="#accordionExample">
+											<div class="card-body">
+												<table>
+													<tr>
+														<th>시작일</th>
+														<td>2020-12-05 09:00</td>
+													</tr>
+													<tr>
+														<th>종료일</th>
+														<td>2020-12-05 11:00</td>
+													</tr>
+													<tr>
+														<th>장 소</th>
+														<td>사직 야구장</td>
+													</tr>
+													<tr>
+														<th style="vertical-align: top;">내 용</th>
+														<td>우천시 경기가 취소 될 수 있습니다.</td>
+													</tr>
+												</table>
+												<div class="text-center payment_people" onclick="location.href='numberofpeople.html'">참여인원 1명</div>
+												<div class="payment_btn2 text-center">
+													<button class="payment_btn2_blue">참여</button>
+													<button class="payment_btn2_gray">불참</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card" id="card_6">
+										<div class="card-header" id="heading_6">
+											<h2 class="clearfix mb-0">
+												<a class="btn btn-link collapsed event-orange"
+													data-toggle="collapse" data-target="#collapse_6"
+													aria-expanded="false" aria-controls="collapse_6"> <span>&nbsp&nbsp&nbsp&nbsp</span>vs 한화 이글스
+													<b><i class="fas fa-angle-down"></i></b>
+												</a>
+											</h2>
+										</div>
+										<div id="collapse_6" class="collapse" aria-labelledby="heading_6" data-parent="#accordionExample">
+											<div class="card-body">
+												<table>
+													<tr>
+														<th>시작일</th>
+														<td>2020-12-10 16:00</td>
+													</tr>
+													<tr>
+														<th>종료일</th>
+														<td>2020-12-10 18:00</td>
+													</tr>
+													<tr>
+														<th>장 소</th>
+														<td>이글스 파크</td>
+													</tr>
+													<tr>
+														<th style="vertical-align: top;">내 용</th>
+														<td>친선전 경기입니다</td>
+													</tr>
+												</table>
+												<div class="text-center payment_people" onclick="location.href='numberofpeople.html'">참여인원 2명</div>
+												<div class="payment_btn2 text-center">
+													<button class="payment_btn2_blue">참여</button>
+													<button class="payment_btn2_gray">불참</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card" id="card_7">
+										<div class="card-header" id="heading_7">
+											<h2 class="clearfix mb-0">
+												<a class="btn btn-link collapsed event-red"
+													data-toggle="collapse" data-target="#collapse_7"
+													aria-expanded="false" aria-controls="collapse_7"> <span>&nbsp&nbsp&nbsp&nbsp</span>vs NC 다이노스
+													<b><i class="fas fa-angle-down"></i></b>
+												</a>
+											</h2>
+										</div>
+										<div id="collapse_7" class="collapse" aria-labelledby="heading_7" data-parent="#accordionExample">
+											<div class="card-body">
+												<table>
+													<tr>
+														<th>시작일</th>
+														<td>2020-12-19 10:00</td>
+													</tr>
+													<tr>
+														<th>종료일</th>
+														<td>2020-12-19 12:00</td>
+													</tr>
+													<tr>
+														<th>장 소</th>
+														<td>창원 NC 파크</td>
+													</tr>
+													<tr>
+														<th style="vertical-align: top;">내 용</th>
+														<td>우천시 경기가 취소 될 수 있습니다.</td>
+													</tr>
+												</table>
+												<div class="text-center payment_people" onclick="location.href='numberofpeople.html'">참여인원 5명</div>
+												<div class="payment_btn2 text-center">
+													<button class="payment_btn2_blue">참여</button>
+													<button class="payment_btn2_gray">불참</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card" id="card_8">
+										<div class="card-header" id="heading_6">
+											<h2 class="clearfix mb-0">
+												<a class="btn btn-link collapsed event-orange"
+													data-toggle="collapse" data-target="#collapse_8"
+													aria-expanded="false" aria-controls="collapse_8"> <span>&nbsp&nbsp&nbsp&nbsp</span>vs SK 와이번스
+													<b><i class="fas fa-angle-down"></i></b>
+												</a>
+											</h2>
+										</div>
+										<div id="collapse_8" class="collapse" aria-labelledby="heading_8" data-parent="#accordionExample">
+											<div class="card-body">
+												<table>
+													<tr>
+														<th>시작일</th>
+														<td>2020-12-24 09:00</td>
+													</tr>
+													<tr>
+														<th>종료일</th>
+														<td>2020-12-24 11:00</td>
+													</tr>
+													<tr>
+														<th>장 소</th>
+														<td>사직 야구장</td>
+													</tr>
+													<tr>
+														<th style="vertical-align: top;">내 용</th>
+														<td>친선전 경기입니다</td>
+													</tr>
+												</table>
+												<div class="text-center payment_people" onclick="location.href='numberofpeople.html'">참여인원 2명</div>
+												<div class="payment_btn2 text-center">
+													<button class="payment_btn2_blue">참여</button>
+													<button class="payment_btn2_gray">불참</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card" id="card_9">
+										<div class="card-header" id="heading_9">
+											<h2 class="clearfix mb-0">
+												<a class="btn btn-link collapsed event-red"
+													data-toggle="collapse" data-target="#collapse_9"
+													aria-expanded="false" aria-controls="collapse_9"> <span>&nbsp&nbsp&nbsp&nbsp</span>vs LG 트윈스
+													<b><i class="fas fa-angle-down"></i></b>
+												</a>
+											</h2>
+										</div>
+										<div id="collapse_9" class="collapse" aria-labelledby="heading_9" data-parent="#accordionExample">
+											<div class="card-body">
+												<table>
+													<tr>
+														<th>시작일</th>
+														<td>2020-12-30 15:00</td>
+													</tr>
+													<tr>
+														<th>종료일</th>
+														<td>2020-12-30 17:00</td>
+													</tr>
+													<tr>
+														<th>장 소</th>
+														<td>사직 야구장</td>
+													</tr>
+													<tr>
+														<th style="vertical-align: top;">내 용</th>
+														<td>우천시 경기가 취소 될 수 있습니다.</td>
+													</tr>
+												</table>
+												<div class="text-center payment_people" onclick="location.href='numberofpeople.html'">참여인원 1명</div>
+												<div class="payment_btn2 text-center">
+													<button class="payment_btn2_blue">참여</button>
+													<button class="payment_btn2_gray">불참</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card" id="card_10">
+										<div class="card-header" id="heading_10">
+											<h2 class="clearfix mb-0">
+												<a class="btn btn-link collapsed event-green"
+													data-toggle="collapse" data-target="#collapse_10"
+													aria-expanded="false" aria-controls="collapse_10"> <span>&nbsp&nbsp&nbsp&nbsp</span>회식
+													<b><i class="fas fa-angle-down"></i></b>
+												</a>
+											</h2>
+										</div>
+										<div id="collapse_10" class="collapse" aria-labelledby="heading_10" data-parent="#accordionExample">
+											<div class="card-body">
+												<table>
+													<tr>
+														<th>시작일</th>
+														<td>2020-12-31 19:00</td>
+													</tr>
+													<tr>
+														<th>종료일</th>
+														<td>2020-12-31 23:00</td>
+													</tr>
+													<tr>
+														<th>장 소</th>
+														<td>서면</td>
+													</tr>
+													<tr>
+														<th style="vertical-align: top;">내 용</th>
+														<td>연말 회식</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!-- 
+										회비제목일 경우 끝
+									 --> 
+									 <!--
+									<div class="card" id="card_11">
+										<div class="card-header" id="headingTwo">
+											<h2 class="mb-0">
+												<a class="btn btn-link collapsed event-orange"
+													data-toggle="collapse" data-target="#collapseTwo"
+													aria-expanded="false" aria-controls="collapseTwo"> <span>&nbsp&nbsp&nbsp&nbsp</span>비리그경기제목<b><i
+														class="fas fa-angle-down"></i></b>
+												</a>
+											</h2>
+										</div>
+										<div id="collapseTwo" class="collapse"
+											aria-labelledby="headingTwo" data-parent="#accordionExample"
+											style="">
+											<div class="card-body">Anim pariatur cliche
+												reprehenderit, enim eiusmod high life accusamus terry
+												richardson ad squid. 3 wolf moon officia aute, non cupidatat
+												skateboard dolor brunch. Food truck quinoa nesciunt laborum
+												eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+												on it squid single-origin coffee nulla assumenda shoreditch
+												et.</div>
+										</div>
+									</div>-->
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Sub Page Heading -->
+					<nav class="navbar bg_spogg_color spogg_mobile_Menu_top">
+						<!--back (Topbar) -->
+						<!--<button id="sidebarToggleTop"
+							class="btn btn-link rounded-circle mr-3" onclick="history.back()">
+							<i class="fas fa-arrow-left"></i>
+						</button>-->
+						<div class="subpage_title">스케줄</div>
+					</nav>
+					<div class="cora_cale  ">
+						<div id='calendar'></div>
+						<!--<div class="cora_cale_add">
+							<a href="add_schedule.html">+</a>
+						</div>-->
+					</div>
+				</div>
+
+			</div>
+			<!-- End of Main Content -->
+
+		</div>
+		<!-- End of Content Wrapper -->
+
+	</div>
+	<!-- End of Page Wrapper -->
+
+	<!-- Bootstrap core JavaScript-->
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
+

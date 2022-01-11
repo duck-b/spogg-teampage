@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>SPOGG</title>
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<!-- Custom styles for this template-->
+<link href="css/sb-admin-2.min.css" rel="stylesheet">
+<link href="css/spogg_style.css" rel="stylesheet">
+<link rel="stylesheet" href="css/datetimepicker/jquery.simple-dtpicker.css">
+<script src="vendor/jquery/jquery.min.js"></script>
+</head>
+
+<body id="page-top">
+
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+			<div id="mask"></div>
+			<!-- Main Content -->
+			<div id="content" class="bg_spogg_eee">
+
+				<!-- Topbar -->
+				<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow spogg_top_nav bg_spogg_color">
+
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav spogg_pc_Menu">
+						<li><a href="index.html" class="active">메인</a></li>
+						<li><a href="player_list.html">선수단</a></li>
+						<li><a href="schedule.html">스케줄</a></li>
+						<li><a href="recode.html">기록</a></li>
+						<li><a href="menu_more.html">더보기</a></li>
+					</ul>
+				</nav>
+				<!-- End of Topbar -->
+
+				<!-- Mobile Topbar -->
+				<nav class="spogg_mobile_Menu">
+					<!-- Topbar Navbar -->
+					<ul class="nav nav-pills nav-justified spogg_nav_mobile"
+						id="spogg_mobile_Menu">
+						<li><a href="index.html" class="active"><img
+								src="img/spogg/house_icon_blue.png">메인</a></li>
+						<li><a href="player_list.html"><img
+								src="img/spogg/group_icon.png">선수단</a></li>
+						<li><a href="schedule.html"><img
+								src="img/spogg/calender_icon.png">스케줄</a></li>
+						<li><a href="recode.html"><img
+								src="img/spogg/sound_icon.png">기록</a></li>
+						<li><a href="menu_more.html"><img
+								src="img/spogg/etc_icon.png" style="padding: 9px 0">더보기</a></li>
+					</ul>
+				</nav>
+
+				<!-- Mobile End of Topbar -->
+				<script src="js/mobilemenu.js"></script>
+
+				<!-- Begin Page Content -->
+				<div class="container-fluid">
+
+					<!-- Sub Page Heading -->
+					<nav class="navbar bg_spogg_color spogg_mobile_Menu_top">
+						<!--back (Topbar) -->
+						<button id="sidebarToggleTop"
+							class="btn btn-link rounded-circle mr-3" onclick="history.back()">
+							<i class="fas fa-arrow-left"></i>
+						</button>
+						<div class="subpage_title">스케줄 수정</div>
+					</nav>
+
+					<!-- Content Row -->
+					<div class="row more_upload">
+						<!-- Earnings (Monthly) Card Example -->
+						<div class="col-xs-12 col-sm-12 col-md-12 mb-4 more_teamInfo">
+							<div class="row bg-white mb-12">
+								<div class="col-xs-3 p-10 more_uploadtitle">
+									<label for="">시작일</label>
+								</div>
+								<div class="col-xs-8 p-10 text-center">
+									<input type="text" class="form-control datetimepicker_start"
+										id="" placeholder="날짜및 시간을 입력해주세요." value="2020-11-01">
+								</div>
+							</div>
+							<div class="row bg-white mb-12">
+								<div class="col-xs-3 p-10 more_uploadtitle">
+									<label for="">종료일</label>
+								</div>
+								<div class="col-xs-8 p-10 text-center">
+									<input type="text" class="form-control datetimepicker_end"
+										id="" placeholder="날짜및 시간을 입력해주세요." value="2020-11-10">
+								</div>
+							</div>
+							<div class="row bg-white mb-12">
+								<div class="col-xs-3 p-10 more_uploadtitle">
+									<label for="">제목</label>
+								</div>
+								<div class="col-xs-8 p-10 text-center">
+									<input type="text" class="form-control " id=""
+										placeholder="리그경기 제목을 입력해주세요."  value="리그경기 제목">
+								</div>
+							</div>
+							<div class="row bg-white mb-12">
+								<div class="col-xs-3 p-10 more_uploadtitle">
+									<label for="">장소</label>
+								</div>
+								<div class="col-xs-8 p-10 text-center">
+									<input type="text" class="form-control " id=""
+										placeholder="장소를 입력해 주세요." value="경암체육관">
+								</div>
+							</div>
+							<div class="row bg-white mb-12">
+								<div class="col-xs-3 p-10 more_uploadtitle">
+									<label for="">유형</label>
+								</div>
+								<div class="col-xs-8 p-10 text-center">
+									<div class="typeSelect event-red" id="typeSelect">
+										<span>&nbsp&nbsp&nbsp&nbsp</span> <b>리그 경기</b> <i
+											class="fas fa-angle-down"></i>
+									</div>
+								</div>
+							</div>
+							<div class="row bg-white mb-12 payment_btn1 radio-btn-group" id="changebtn">
+								<div class="col-xs-3"></div>
+								<div class="col-xs-4 p-10 payment_btn2_blue">
+									<!-- <button class="payment_btn2_blue">참여</button> -->
+									<div class="radio">
+										<input type="radio" name="radio" value="참여" checked="checked" id="participation"> 
+										<label for="participation">참여</label>
+									</div>
+								</div>
+								<div class="col-xs-4 p-10 payment_btn2_gray">
+									<!-- <button class="payment_btn2_gray">불참</button> -->
+									<div class="radio">
+										<input type="radio" name="radio" value="불참" id="unparticipation"> 
+										<label for="unparticipation">불참</label>
+									</div>
+								</div>
+							</div>
+							<div class="row bg-white mb-12">
+								<div class="col-xs-12 p-10 more_teamInfo_label">
+								<!-- textarea 내부 줄바꿈 :  &#10; -->
+									<textarea rows="10" cols="30"
+										placeholder="동영상 업로드시 동영상에 관련된 내용 작성">우천시 경기가 취소 될 수 있습니다.&#10;전일 공지하겠습니다.</textarea>
+								</div>
+							</div>
+							<div class="row bg-white mb-12">
+								<div class="col-xs-12 p-20 text-center">
+									<input type="submit" value="등록">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /.container-fluid -->
+
+					<!-- Modal -->
+					<div class="modal fade fullpopup" id="myModal" role="dialog"
+						style="padding-right: 0 !important">
+						<!-- 사용자 지정 부분① : id명 -->
+						<div class="modal-dialog">
+							<!-- Modal content-->
+							<div class="modal-content">
+								<div class="modal-body typelist">
+									<h6>스케줄 유형을 선택해주세요.</h6>
+									<ul>
+										<li class="event-red" onclick="typeSelect(1)"><span>&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+											리그경기</li>
+										<li class="event-yellow" onclick="typeSelect(2)"><span>&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+											비리그경기</li>
+										<li class="event-orange" onclick="typeSelect(3)"><span>&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+											회비</li>
+										<li class="event-green" onclick="typeSelect(4)"><span>&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+											기타</li>
+									</ul>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">창닫기</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- End of Main Content -->
+
+		</div>
+		<!-- End of Content Wrapper -->
+
+	</div>
+	<!-- End of Page Wrapper -->
+
+
+
+	<!-- Bootstrap core JavaScript-->
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Custom scripts for all pages-->
+	<script src="js/sb-admin-2.min.js"></script>
+
+	<script src="js/datetimepicker/jquery.min.js"></script>
+	<script src="js/datetimepicker/jquery.simple-dtpicker.js"></script>
+	<script>
+		$(function() {
+	
+			$('.datetimepicker_start').appendDtpicker({
+				'locale' : 'ko',
+				"closeOnSelected" : true // 선택하면 선택창 x
+			});
+			$('.datetimepicker_end').appendDtpicker({
+				'locale' : 'ko',
+				"closeOnSelected" : true // 선택하면 선택창 x
+			});
+		});
+		$(document).ready(function(e) {
+	
+			$("#typeSelect").on("click", function(event) {
+				event.preventDefault();
+				jQuery.noConflict();
+				$('#myModal').modal('show');
+			});
+	
+		});
+		function typeSelect(obj) { //select박스 변경시 해당하는 버튼 생성
+			var typename = "";
+			if (obj == 1) { //option의 값이 1이면 버튼 2개 : 리그경기
+				$("#changebtn").html(
+						"<div class='col-xs-3'></div>"
+						+"<div class='col-xs-4 p-10 payment_btn2_blue'>"
+						+"  <div class='radio'>"
+						+"		<input type='radio' name='radio' value='참여' checked='checked' id='participation'> "
+						+"		<label for='participation'>참여</label>"
+						+"	</div>"
+						+"</div>"
+						+"<div class='col-xs-4 p-10 payment_btn2_gray'>"
+						+"  <div class='radio'>"
+						+"		<input type='radio' name='radio' value='불참' id='unparticipation'> "
+						+"		<label for='unparticipation'>불참</label>"
+						+"	</div>"
+						+"</div>");
+				$("#typeSelect b").html("리그경기");
+				$("#typeSelect").attr("class", "typeSelect event-red");
+	
+			} else if (obj == 2) { //option의 값이 1이면 버튼 2개 : 비리그경기
+				$("#changebtn").html(
+						"<div class='col-xs-3'></div>"
+						+"<div class='col-xs-4 p-10 payment_btn2_blue'>"
+						+"  <div class='radio'>"
+						+"		<input type='radio' name='radio' value='참여' checked='checked' id='participation'> "
+						+"		<label for='participation'>참여</label>"
+						+"	</div>"
+						+"</div>"
+						+"<div class='col-xs-4 p-10 payment_btn2_gray'>"
+						+"  <div class='radio'>"
+						+"		<input type='radio' name='radio' value='불참' id='unparticipation'> "
+						+"		<label for='unparticipation'>불참</label>"
+						+"	</div>"
+						+"</div>");
+				$("#typeSelect b").html("비리그경기");
+				$("#typeSelect").attr("class", "typeSelect event-orange");
+	
+			} else if (obj == 3) { //option의 값이 2이면 버튼 1개 : 회비
+				$("#changebtn").html(
+						"<div class='col-xs-3'></div>"
+						+"<div class='col-xs-8 p-10 payment_btn2_blue'>"
+						+"  <div class='radio'>"
+						+"		<input type='radio' name='radio' value='납부완료' checked='checked' id='complete'> "
+						+"		<label for='complete'>납부완료</label>"
+						+"	</div>"
+						+"</div>");
+				$("#typeSelect b").html("회비");
+				$("#typeSelect").attr("class", "typeSelect event-yellow");
+	
+			} else { // 기타
+				$("#changebtn").html(
+						"<div class='col-xs-3'></div>"
+						+"<div class='col-xs-8 p-10 payment_btn2_blue'>"
+						+"  <div class='radio'>"
+						+"		<input type='radio' name='radio' value='참여' checked='checked' id='participation'> "
+						+"		<label for='participation'>참여</label>"
+						+"	</div>"
+						+"</div>");
+				$("#typeSelect b").html("기타");
+				$("#typeSelect").attr("class", "typeSelect event-green");
+			}
+			$('#myModal').modal("hide"); //닫기
+		}
+	</script>
+	
+		
+</body>
+
+</html>
